@@ -75,6 +75,7 @@ main {
   top: 0;
   width: 2800px;
   height: 100%;
+  will-change: transform;
 }
 
 .slider-inner {

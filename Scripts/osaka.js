@@ -29,12 +29,12 @@ function init() {
     document.body.style.height = `${sliderWidth - (window.innerWidth - window.innerHeight)}px`;
 }
 
-console.log(-(target - current) * 0.0002);
 
 function animate() {
     current = parseFloat(lerp(current, target, ease)).toFixed(2);
     target = window.scrollY;
-    setTransform(slider, `translateX(-${current}px)`);
+    //setTransform(slider, `translateX(-${current}px)`);
+    slider.style.transform = `translate3d(${-current}px, 0, 0)`
     //requestAnimationFrame(animate);
 }
 
@@ -127,10 +127,6 @@ class EffectCanvas {
 
 }
 
-
-// const texture = images.map(img => new THREE.TextureLoader().load(img))
-// console.log(texture);
-
 class MeshItem {
     constructor(element, scene) {
         this.element = element;
@@ -138,24 +134,26 @@ class MeshItem {
         this.offset = new THREE.Vector2(0, 0);
         this.sizes = new THREE.Vector2(0, 0);
         this.createMesh();
+
+        console.log(this.element);
     }
+
+
 
     getDimensions() {
         const { width, height, top, left } = this.element.getBoundingClientRect();
         this.sizes.set(width, height);
-        //this.offset.set(-left + window.innerWidth / 2 - width / 2, top - window.innerHeight / 2 + height / 2.5);
-
         this.container = document.querySelector('main');
         this.width = this.container.offsetWidth;
         this.height = this.container.offsetHeight;
-        this.offset.set(-left + this.width / 2 - width / 2.13, top - this.height / 2 + height / 2.97);
+        this.offset.set(left - this.width / 2 + width / 2., -top + this.height / 2 - height / 2.); // make sure the meshs is in the same position as the image and move from the right to the left 
     }
 
     createMesh() {
         this.geometry = new THREE.PlaneGeometry(1, 1, 30, 30); // new THREE.PlaneGeometry(100, 100, 10, 10)
         //let material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
 
-        this.imageTexture = new THREE.TextureLoader().load(this.element);
+        this.imageTexture = new THREE.TextureLoader().load(this.element.src);
         console.log(this.imageTexture);
 
         this.uniforms = {

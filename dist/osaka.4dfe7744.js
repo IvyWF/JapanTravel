@@ -36958,9 +36958,9 @@ if (typeof window !== 'undefined') {
   }
 }
 },{}],"scripts/shaders/vertexShader.glsl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x * 5.);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y * 5.);\n    return position;\n}\n\nvoid main() {\n    //vUv = uv + (uOffset * 2.);\n    vUv = uv;\n    vec3 newPosition = position;\n    newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}";
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529;\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x * 2.);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y * 2.);\n    return position;\n}\n\nvoid main() {\n    //vUv = uv + (uOffset * 2.);\n    vUv = uv;\n    vec3 newPosition = position;\n    newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}";
 },{}],"scripts/shaders/fragmentShader.glsl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\n// uniform float uAlpha;\n// uniform vec2 uOffset;\nvarying vec2 vUv;\n\n// vec2 scaleUV(vec2 uv, float scale) {\n//     float center = 0.5;\n//     return ((uv-center) * scale) + center;\n// }\n\n// vec3 rgbShift(sampler2D textureimage, vec2 uv, vec2 offset) {\n//     float r = texture2D(textureimage, uv + offset).r;\n//     vec2 gb = texture2D(textureimage, uv).gb;\n//     return vec3(r, gb); \n// }\n\nvoid main() {\n    //vec4 imageView = texture2D(uTexture, vUv);\n\n    //gl_FragColor = imageView;\n    //gl_FragColor = vec4(uTexture, vUv);\n    gl_FragColor = vec4(vUv, 0., 1.);\n}";
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nvarying vec2 vUv;\n\nvoid main() {\n    vec4 imageView = texture2D(uTexture, vUv);\n\n    gl_FragColor = imageView;\n}";
 },{}],"scripts/osaka.js":[function(require,module,exports) {
 "use strict";
 
@@ -37005,11 +37005,11 @@ function init() {
   imageWidth = sliderWidth / images.length;
   document.body.style.height = "".concat(sliderWidth - (window.innerWidth - window.innerHeight), "px");
 }
-console.log(-(target - current) * 0.0002);
 function animate() {
   current = parseFloat(lerp(current, target, ease)).toFixed(2);
   target = window.scrollY;
-  setTransform(slider, "translateX(-".concat(current, "px)"));
+  //setTransform(slider, `translateX(-${current}px)`);
+  slider.style.transform = "translate3d(".concat(-current, "px, 0, 0)");
   //requestAnimationFrame(animate);
 }
 
@@ -37104,8 +37104,7 @@ var EffectCanvas = /*#__PURE__*/function () {
     }
   }]);
   return EffectCanvas;
-}(); // const texture = images.map(img => new THREE.TextureLoader().load(img))
-// console.log(texture);
+}();
 var MeshItem = /*#__PURE__*/function () {
   function MeshItem(element, scene) {
     _classCallCheck(this, MeshItem);
@@ -37114,6 +37113,7 @@ var MeshItem = /*#__PURE__*/function () {
     this.offset = new THREE.Vector2(0, 0);
     this.sizes = new THREE.Vector2(0, 0);
     this.createMesh();
+    console.log(this.element);
   }
   _createClass(MeshItem, [{
     key: "getDimensions",
@@ -37124,12 +37124,10 @@ var MeshItem = /*#__PURE__*/function () {
         top = _this$element$getBoun.top,
         left = _this$element$getBoun.left;
       this.sizes.set(width, height);
-      //this.offset.set(-left + window.innerWidth / 2 - width / 2, top - window.innerHeight / 2 + height / 2.5);
-
       this.container = document.querySelector('main');
       this.width = this.container.offsetWidth;
       this.height = this.container.offsetHeight;
-      this.offset.set(-left + this.width / 2 - width / 2.13, top - this.height / 2 + height / 2.97);
+      this.offset.set(left - this.width / 2 + width / 2., -top + this.height / 2 - height / 2.); // make sure the meshs is in the same position as the image and move from the right to the left 
     }
   }, {
     key: "createMesh",
@@ -37137,7 +37135,7 @@ var MeshItem = /*#__PURE__*/function () {
       this.geometry = new THREE.PlaneGeometry(1, 1, 30, 30); // new THREE.PlaneGeometry(100, 100, 10, 10)
       //let material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
 
-      this.imageTexture = new THREE.TextureLoader().load(this.element);
+      this.imageTexture = new THREE.TextureLoader().load(this.element.src);
       console.log(this.imageTexture);
       this.uniforms = {
         uTexture: {
@@ -37201,7 +37199,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49473" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61257" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

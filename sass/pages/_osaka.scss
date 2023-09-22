@@ -87,6 +87,7 @@ main {
     //left: 15%;
     width: 2800px;
     height: 100%;
+    will-change: transform;
 }
 
 .slider-inner {
@@ -103,7 +104,6 @@ main {
     width: 400px;
     height: 100%;
     overflow: hidden;
-    // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 img {

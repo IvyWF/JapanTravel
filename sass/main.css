@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Chokokutai&display=swap");
+/* font-family: 'Chokokutai', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+/* font-family: 'Pacifico', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+@font-face {
+  font-family: "mijuregular";
+  src: url("miju-webfont.woff2") format("woff2"), url("miju-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.fullscreen .homeTitle {
+  text-align: center;
+  margin-top: 25px;
+  font-family: "mijuregular", serif, Arial, Helvetica, sans-serif;
+  font-size: 56px;
+  color: #212E53;
+}
+.fullscreen .homeNav {
+  /*margin-left: 40px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);*/
+  margin-top: 14%;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fullscreen .homeNav {
+    margin-top: 46%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .fullscreen .homeNav {
+    margin-top: 24%;
+  }
+}
+.fullscreen .homeNav__ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .fullscreen .homeNav__ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.fullscreen .homeNav__ul li {
+  margin-top: 20px;
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  letter-spacing: 5px;
+}
+@media screen and (max-width: 767px) {
+  .fullscreen .homeNav__ul li {
+    font-size: 36px;
+  }
+}
+.fullscreen .homeNav__ul li a {
+  text-decoration: none;
+  color: #212E53;
+  transition: 0.3s;
+}
+.fullscreen .homeNav__ul li a:hover {
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.fullscreen .video-background {
+  position: absolute;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(7px);
+}
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen .video-background .video-background {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen .video-background .video-background {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* font-family: 'Potta One', cursive; */
+.osakaTitle {
+  font-family: "Potta One", cursive;
+  font-size: 61px;
+  text-align: center;
+  padding-top: 30px;
+  background-image: url("/images/pexels-yogi-khatri-11115038.jpg");
+  background-size: cover;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+main {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /*Create 2 unequal columns sitting next to each other*/
+}
+
+.slider {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  top: 20vh;
+  width: 6000px;
+  transition: transform 0.15s;
+  will-change: transform;
+}
+
+.item {
+  position: relative;
+  width: 500px;
+  height: 610px;
+  background-size: cover;
+  background-position: center;
+}
+
+.image1 {
+  background-image: url("/images/osaka/1.jpg");
+}
+
+.image2 {
+  background-image: url("/images/osaka/2.jpg");
+}
+
+.image3 {
+  background-image: url("/images/osaka/3.jpg");
+}
+
+.image4 {
+  background-image: url("/images/osaka/4.jpg");
+}
+
+.image5 {
+  background-image: url("/images/osaka/5.jpg");
+}
+
+.image6 {
+  background-image: url("/images/osaka/6.jpg");
+}/*# sourceMappingURL=main.css.map */

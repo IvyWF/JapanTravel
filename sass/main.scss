@@ -1,3 +1,42 @@
+@import "./pages/osaka";
+
+@import url('https://fonts.googleapis.com/css2?family=Chokokutai&display=swap');
+/* font-family: 'Chokokutai', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* font-family: 'Pacifico', cursive; */
+
+@font-face {
+    font-family: 'mijuregular';
+    src: url('../fonts/miju-webfont.woff2') format('woff2'),
+        url('../fonts/miju-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//Responsive
+$breakpoints: (
+    mobile: 767px,
+    tablet: 992px
+);
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: 768px) and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+$redColor: rgba(244, 67, 54, 1);
+$blueColor: rgba(33, 150, 243, 1);
+$navColor: #212E53;
+
 * {
     margin: 0;
     padding: 0;
@@ -10,48 +49,153 @@
     overflow: hidden;
     position: relative;
 
-    h1 {
+    .homeTitle {
         text-align: center;
-        margin-top: 10px;
+        margin-top: 25px;
+        font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;
+        font-size: 56px;
+        color: #212E53; // #F9968B
     }
 
-    nav {
-        margin-left: 40px;
+    .homeNav {
+        //menu on the left and in the middleof the page
+        /*margin-left: 40px;
         position: absolute;
         top: 50%;
-        /*-ms-transform: translateY(-50%);*/
-        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);*/
+        margin-top: 14%;
 
-        ul {
+        @include tablet-only {
+            margin-top: 46%;
+        }
+
+        @include mobile-only {
+            margin-top: 24%;
+        }
+
+        &__ul {
             list-style-type: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            @include mobile-only {
+                display: flex;
+                flex-direction: column;
+            }
 
             li {
                 margin-top: 20px;
-                font-size: 24px;
+                font-size: 50px;
+                font-family: 'Pacifico', cursive;
+                letter-spacing: 5px;
+
+                @include mobile-only {
+                    font-size: 36px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #212E53;
+                    transition: 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #fff;
+                        text-shadow: 0 0 5px #03e9f4,
+                            0 0 25px #03e9f4,
+                            0 0 50px #03e9f4,
+                            0 0 100px #03e9f4;
+                    }
+                }
             }
 
-            a {
-                text-decoration: none;
-                color: black;
-            }
+
         }
 
     }
-
-    .social-media {
-        margin-left: 31px;
-        position: absolute;
-        top: 92%;
-        /* -ms-transform: translateY(-50%); */
-        transform: translateY(-92%);
-
-        i {
-            font-size: 33px;
-            margin-left: 10px;
-        }
-    }
-
 }
+
+//Social media icons
+//     .social-media {
+//         //icons on the bottom and on the left of the page
+//         /*margin-left: 31px;
+//         position: absolute;
+//         top: 92%;
+//         -ms-transform: translateY(-50%);
+//         transform: translateY(-92%);
+//         display: flex;*/
+
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         margin-top: 14%;
+
+//         @include tablet-only {
+//             margin-top: 45%;
+//         }
+
+//         @include mobile-only {
+//             margin-top: 33%;
+//         }
+
+//         i {
+//             font-size: 42px;
+//             //margin-left: 17px;
+//             cursor: pointer;
+
+//             @include mobile-only {
+//                 font-size: 32px;
+//             }
+
+//             /*&.icon-3d {
+//                 padding: 10px;
+//                 -webkit-animation: icon3d 200ms 10;
+//                 animation: icon3d 200ms 10;
+
+//                 &:hover {
+//                     -webkit-animation: icon3d 200ms infinite;
+//                     animation: icon3d 200ms infinite;
+//                 }
+//             }*/
+
+//             &.fa-facebook-f {
+//                 margin-left: 50px;
+//             }
+
+//             &.fa-pinterest-p {
+//                 margin-left: 50px;
+//             }
+//         }
+
+
+
+//     }
+
+// }
+
+// @keyframes icon3d {
+//     0% {
+//         text-shadow: 5px 4px $redColor, -5px -6px $blueColor;
+//     }
+
+//     25% {
+//         text-shadow: -5px -6px $redColor, 5px 4px $blueColor;
+//     }
+
+//     50% {
+//         text-shadow: 5px -4px $redColor, -8px 4px $blueColor;
+//     }
+
+//     75% {
+//         text-shadow: -8px -4px $redColor, -5px -4px $blueColor;
+//     }
+
+//     100% {
+//         text-shadow: -5px 0 $redColor, 5px -4px $blueColor;
+//     }
+// }
 
 .fullscreen .video-background {
     position: absolute;
@@ -63,19 +207,37 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    filter: blur(7px);
 
-}
 
-@media (min-aspect-ratio: 16/9) {
-    .video-background {
-        width: 100%;
-        height: auto;
+    @media (min-aspect-ratio: 16/9) {
+        .video-background {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        .video-background {
+            width: auto;
+            height: 100%;
+        }
     }
 }
 
-@media (max-aspect-ratio: 16/9) {
-    .video-background {
-        width: auto;
-        height: 100%;
-    }
-}
+
+//Osaka Page
+
+
+
+// .bd-image {
+//     position: fixed;
+//     background-image: url('/images/sunrise.jpg');
+//     //filter: blur(15px);
+//     opacity: 65%;
+//     -webkit-filter: blur(8px);
+//     height: 100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }

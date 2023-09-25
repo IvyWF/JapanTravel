@@ -16,11 +16,52 @@
         <h1 class="osakaTitle">大阪</span></h1>
     </header>
 
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
     <main>
+        <div class="slider">
+            <div class="slider-inner">
+                <div class="item hoverable">
+                    <img src="images/osaka/1.jpg" alt="">
+                </div>
+                <div class="item hoverable">
+                    <img src="images/osaka/2.jpg" alt="">
+                </div>
+                <div class="item hoverable">
+                    <img src="images/osaka/3.jpg" alt="">
+                </div>
+                <div class="item hoverable">
+                    <img src="images/osaka/4.jpg" alt="">
+                </div>
+                <div class="item hoverable">
+                    <img src="images/osaka/5.jpg" alt="">
+                </div>
+                <div class="item hoverable">
+                    <img src="images/osaka/6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+
         <nav class="pagesNav">
             <ul class="pagesNav__items">
                 <li>
-                    <a href="#">
+                    <a href="#" class="hoverable">
                         <span class="letter">O</span>
                         <span class="letter">s</span>
                         <span class="letter">a</span>
@@ -29,16 +70,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="lette">T</span>
-                        <span class="lette">o</span>
-                        <span class="lette">k</span>
-                        <span class="lette">y</span>
-                        <span class="lette">o</span>
+                    <a href="#" class="hoverable">
+                        <span class="letter">T</span>
+                        <span class="letter">o</span>
+                        <span class="letter">k</span>
+                        <span class="letter">y</span>
+                        <span class="letter">o</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="hoverable">
                         <span class="letter">K</span>
                         <span class="letter">y</span>
                         <span class="letter">o</span>
@@ -49,31 +90,9 @@
             </ul>
         </nav>
 
-        <div class="slider">
-            <div class="slider-inner">
-                <div class="item">
-                    <img src="images/osaka/1.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="images/osaka/2.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="images/osaka/3.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="images/osaka/4.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="images/osaka/5.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="images/osaka/6.jpg" alt="">
-                </div>
-            </div>
-        </div>
+    </footer>
 
-    </main>
-
+    <script src="scripts/cursor.js"></script>
     <script src="scripts/osaka.js"></script>
 </body>
 

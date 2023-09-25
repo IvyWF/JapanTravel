@@ -17,7 +17,6 @@ header {
 header .osakaTitle {
   font-family: "Potta One", cursive;
   font-size: 62px;
-  padding-top: 30px;
   margin-left: 47%;
   background-image: url("/images/pexels-ryutaro-tsukata-5220061.jpg");
   background-size: cover;
@@ -27,44 +26,9 @@ header .osakaTitle {
   -webkit-text-stroke: 1px lavenderblush;
 }
 
-.pagesNav {
-  /*display: flex;
-  justify-content: space-evenly;*/
-  position: absolute;
-  top: 39%;
-  transform: translateY(-60%);
-  margin-left: 30px;
-  z-index: 1;
-}
-.pagesNav ul {
-  list-style-type: none;
-}
-.pagesNav ul li {
-  font-family: "Pacifico", cursive;
-  letter-spacing: -1px;
-  font-size: 40px;
-  margin-top: 20px;
-}
-.pagesNav ul li a {
-  color: #212E53;
-  text-decoration: none;
-}
-.pagesNav ul li a:hover {
-  cursor: pointer;
-}
-.pagesNav ul li a .letter {
-  text-shadow: 0.03em 0.03em 0.02em #777;
-  will-change: transform;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-.pagesNav ul li a .letter:hover {
-  transform: scaleX(0.9) scaleY(1.3);
-}
-
 main {
   position: fixed;
-  top: 15%;
+  top: 11.1%;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -72,7 +36,7 @@ main {
 
 .slider {
   position: absolute;
-  top: 0;
+  top: 1%;
   width: 2800px;
   height: 100%;
   will-change: transform;
@@ -80,8 +44,8 @@ main {
 
 .slider-inner {
   position: absolute;
-  top: 6%;
-  height: 70%;
+  top: 0;
+  height: 77%;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -107,6 +71,54 @@ canvas {
   z-index: -1;
   top: 0;
   left: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 15px;
+}
+footer .pagesNav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+footer .pagesNav ul li {
+  font-family: "Pacifico", cursive;
+  letter-spacing: -1px;
+  font-size: 36px;
+}
+footer .pagesNav ul li a {
+  color: #212E53;
+  text-decoration: none;
+}
+footer .pagesNav ul li a:hover {
+  cursor: pointer;
+}
+footer .pagesNav ul li a .letter {
+  text-shadow: 0.03em 0.03em 0.02em #777;
+  will-change: transform;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+footer .pagesNav ul li a .letter:hover {
+  transform: scaleX(0.9) scaleY(1.3);
+}
+
+.cursor {
+  pointer-events: none;
+}
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 10000;
+}
+.cursor__ball circle {
+  fill: #ad5389;
 }
 
 /* font-family: 'Chokokutai', cursive; */

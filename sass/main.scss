@@ -5,15 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 /* font-family: 'Pacifico', cursive; */
 
-@font-face {
-    font-family: 'mijuregular';
-    src: url('../fonts/miju-webfont.woff2') format('woff2'),
-        url('../fonts/miju-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 
 //Responsive
 $breakpoints: (
@@ -52,7 +43,7 @@ $navColor: #212E53;
     .homeTitle {
         text-align: center;
         margin-top: 25px;
-        font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;
+        /*font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;*/
         font-size: 56px;
         color: #212E53; // #F9968B
     }

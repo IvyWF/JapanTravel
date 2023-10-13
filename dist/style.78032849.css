@@ -6,6 +6,40 @@
   /*background-color: black;*/
   overscroll-behavior: none;
   width: 100vw;
+  cursor: none;
+}
+
+.loader-span {
+  overflow: hidden;
+  display: block;
+}
+
+.loader-wrap {
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.loader-wrap svg {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 110vh;
+}
+
+.loader-wrap .loader-wrap-heading h1 {
+  font-size: 120px;
+  z-index: 20;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-family: "Ogg";
 }
 
 header {
@@ -37,7 +71,7 @@ main {
 .slider {
   position: absolute;
   top: 1%;
-  width: 2800px;
+  width: 5000px;
   height: 100%;
   will-change: transform;
 }
@@ -53,7 +87,7 @@ main {
 
 .item {
   position: relative;
-  width: 400px;
+  width: 800px;
   height: 100%;
   overflow: hidden;
 }
@@ -123,12 +157,6 @@ footer .pagesNav ul li a .letter:hover {
 
 /* font-family: 'Chokokutai', cursive; */
 /* font-family: 'Pacifico', cursive; */
-@font-face {
-  font-family: "mijuregular";
-  src: url("/miju-webfont.e3535920.woff2") format("woff2"), url("/miju-webfont.55a4659d.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 * {
   margin: 0;
   padding: 0;
@@ -144,7 +172,7 @@ footer .pagesNav ul li a .letter:hover {
 .fullscreen .homeTitle {
   text-align: center;
   margin-top: 25px;
-  font-family: "mijuregular", serif, Arial, Helvetica, sans-serif;
+  /*font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;*/
   font-size: 56px;
   color: #212E53;
 }

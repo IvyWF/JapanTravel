@@ -12,86 +12,111 @@
 
 <body class="osaka-body">
 
-    <header>
-        <h1 class="osakaTitle">大阪</span></h1>
-    </header>
+    <div class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
 
-    <div class="cursor">
-        <div class="cursor__ball cursor__ball--big">
-            <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
-            </svg>
-        </div>
-
-        <div class="cursor__ball cursor__ball--small">
-            <svg height="10" width="10">
-                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
-            </svg>
+        <div class="loader-wrap-heading">
+            <span class="loader-span">
+                <h1>Loading</h1>
+            </span>
         </div>
     </div>
 
-    <main>
-        <div class="slider">
-            <div class="slider-inner">
-                <div class="item hoverable">
-                    <img src="images/osaka/1.jpg" alt="">
-                </div>
-                <div class="item hoverable">
-                    <img src="images/osaka/2.jpg" alt="">
-                </div>
-                <div class="item hoverable">
-                    <img src="images/osaka/3.jpg" alt="">
-                </div>
-                <div class="item hoverable">
-                    <img src="images/osaka/4.jpg" alt="">
-                </div>
-                <div class="item hoverable">
-                    <img src="images/osaka/5.jpg" alt="">
-                </div>
-                <div class="item hoverable">
-                    <img src="images/osaka/6.jpg" alt="">
-                </div>
+    <div class="container">
+
+        <header>
+            <h1 class="osakaTitle">大阪</span></h1>
+        </header>
+
+        <div class="cursor">
+            <div class="cursor__ball cursor__ball--big">
+                <svg height="30" width="30">
+                    <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+                </svg>
+            </div>
+
+            <div class="cursor__ball cursor__ball--small">
+                <svg height="10" width="10">
+                    <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+                </svg>
             </div>
         </div>
 
-    </main>
+        <main>
+            <div class="slider">
+                <div class="slider-inner">
+                    <div class="item hoverable">
+                        <img src="images/osaka/1.jpg" alt="">
+                    </div>
+                    <div class="item hoverable">
+                        <img src="images/osaka/2.jpg" alt="">
+                    </div>
+                    <div class="item hoverable">
+                        <img src="images/osaka/3.jpg" alt="">
+                    </div>
+                    <div class="item hoverable">
+                        <img src="images/osaka/4.jpg" alt="">
+                    </div>
+                    <div class="item hoverable">
+                        <img src="images/osaka/5.jpg" alt="">
+                    </div>
+                    <div class="item hoverable">
+                        <img src="images/osaka/6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
 
-    <footer>
+        </main>
 
-        <nav class="pagesNav">
-            <ul class="pagesNav__items">
-                <li>
-                    <a href="#" class="hoverable">
-                        <span class="letter">O</span>
-                        <span class="letter">s</span>
-                        <span class="letter">a</span>
-                        <span class="letter">k</span>
-                        <span class="letter">a</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hoverable">
-                        <span class="letter">T</span>
-                        <span class="letter">o</span>
-                        <span class="letter">k</span>
-                        <span class="letter">y</span>
-                        <span class="letter">o</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hoverable">
-                        <span class="letter">K</span>
-                        <span class="letter">y</span>
-                        <span class="letter">o</span>
-                        <span class="letter">t</span>
-                        <span class="letter">o</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <footer>
 
-    </footer>
+            <nav class="pagesNav">
+                <ul class="pagesNav__items">
+                    <li>
+                        <a href="index.html" class="hoverable">
+                            <span class="letter">H</span>
+                            <span class="letter">o</span>
+                            <span class="letter">m</span>
+                            <span class="letter">e</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter">O</span>
+                            <span class="letter">s</span>
+                            <span class="letter">a</span>
+                            <span class="letter">k</span>
+                            <span class="letter">a</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter">T</span>
+                            <span class="letter">o</span>
+                            <span class="letter">k</span>
+                            <span class="letter">y</span>
+                            <span class="letter">o</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter">K</span>
+                            <span class="letter">y</span>
+                            <span class="letter">o</span>
+                            <span class="letter">t</span>
+                            <span class="letter">o</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
+        </footer>
+
+    </div>
+
+    <script src="scripts/preload.js"></script>
     <script src="scripts/cursor.js"></script>
     <script src="scripts/osaka.js"></script>
 </body>

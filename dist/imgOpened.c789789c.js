@@ -117,62 +117,116 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-  return bundleURL;
+})({"scripts/imgOpened.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var galleryImages = document.querySelectorAll("img");
+console.log(galleryImages);
+var getLatestOpenedImage;
+var windowWidth = window.innerWidth;
+if (galleryImages) {
+  galleryImages.forEach(function (image, index) {
+    image.onclick = function () {
+      var getImageUrl = image.src;
+      // let getFullImgUrl = image.src;
+      // let getImgUrlPos = getFullImgUrl.split("http://localhost:1234/");
+      // let setNewImgUrl = getImgUrlPos[1];
+      //console.log(getImgUrlPos[1]);
+
+      getLatestOpenedImage = index + 1;
+      var container = document.body;
+      var newImageWindow = document.createElement("div");
+      container.appendChild(newImageWindow);
+      newImageWindow.setAttribute("class", "img-window");
+      newImageWindow.addEventListener('click', closeImage);
+
+      //newImageWindow.setAttribute("onclick", closeImage()); => this 'onclick' doesn't work any more. Need to create an addEventListener
+
+      var newImage = document.createElement("img");
+      newImageWindow.appendChild(newImage);
+      newImage.setAttribute("src", getImageUrl);
+      newImage.setAttribute("id", "current-img");
+      newImage.onload = function () {
+        var imgWidth = this.width;
+        var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+        var newNextBtn = document.createElement("a");
+        var btnNextText = document.createTextNode(">");
+        newNextBtn.appendChild(btnNextText);
+        container.appendChild(newNextBtn);
+        newNextBtn.setAttribute("class", "img-btn-next");
+        newNextBtn.addEventListener('click', function changeImage() {
+          //console.log(setNewImgUrl);
+          document.querySelector("#current-img").remove();
+          var getImgWindow = document.querySelector(".img-window");
+          var newImg = document.createElement("img");
+          getImgWindow.appendChild(newImg);
+          var images = _toConsumableArray(document.querySelectorAll("img"));
+          // galleryImages.forEach(image, index) {
+          //     let getUrl = image.src;
+          //     let getUrlPos = getUrl.split("http://localhost:1234/");
+          //     let setNewUrl = getUrlPos[1];
+          // }
+          var calcNewImg = getLatestOpenedImage + 1;
+          console.log(calcNewImg);
+          if (calcNewImg > galleryImages.length) {
+            calcNewImg = 1;
+          }
+          var getNewImgUrl = images[calcNewImg - 1].src;
+          console.log(getNewImgUrl);
+          newImg.setAttribute("src", getNewImgUrl);
+          newImg.setAttribute("id", "current-img");
+          getLatestOpenedImage = calcNewImg;
+          newImg.onload = function () {
+            var imgWidth = this.width;
+            var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+            var nextBtn = document.querySelector(".img-btn-next");
+            nextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
+          };
+        });
+        newNextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
+        var newPrevBtn = document.createElement("a");
+        var btnPrevText = document.createTextNode("<");
+        newPrevBtn.appendChild(btnPrevText);
+        container.appendChild(newPrevBtn);
+        newPrevBtn.setAttribute("class", "img-btn-prev");
+        newPrevBtn.addEventListener('click', function changeImage() {
+          document.querySelector("#current-img").remove();
+          var getImgWindow = document.querySelector(".img-window");
+          var newImg = document.createElement("img");
+          getImgWindow.appendChild(newImg);
+          var images = _toConsumableArray(document.querySelectorAll("img"));
+          var calcNewImg = getLatestOpenedImage - 1;
+          console.log(calcNewImg);
+          if (calcNewImg < 1) {
+            calcNewImg = galleryImages.length;
+          }
+          var getNewImgUrl = images[calcNewImg - 1].src;
+          console.log(getNewImgUrl);
+          newImg.setAttribute("src", getNewImgUrl);
+          newImg.setAttribute("id", "current-img");
+          getLatestOpenedImage = calcNewImg;
+          newImg.onload = function () {
+            var imgWidth = this.width;
+            var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+            var prevBtn = document.querySelector(".img-btn-prev");
+            prevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+          };
+        });
+        newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+      };
+    };
+  });
 }
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-  return '/';
+function closeImage() {
+  document.querySelector(".img-window").remove();
+  document.querySelector(".img-btn-next").remove();
+  document.querySelector(".img-btn-prev").remove();
 }
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-    cssTimeout = null;
-  }, 50);
-}
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/style.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"/Users/xuwenfei/Desktop/JapanTravel/images/pexels-ryutaro-tsukata-5220061.jpg":[["pexels-ryutaro-tsukata-5220061.d236307e.jpg","images/pexels-ryutaro-tsukata-5220061.jpg"],"images/pexels-ryutaro-tsukata-5220061.jpg"],"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -197,7 +251,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57417" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54741" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
@@ -341,5 +395,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.78032849.js.map
+},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/imgOpened.js"], null)
+//# sourceMappingURL=/imgOpened.c789789c.js.map

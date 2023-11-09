@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 /* font-family: 'Potta One', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+/* font-family: 'VT323', cursive; */
 @import url("https://fonts.googleapis.com/css2?family=Chokokutai&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-.osaka-body {
-  /*background-color: black;*/
-  overscroll-behavior: none;
-  width: 100vw;
-  cursor: none;
+@font-face {
+  font-family: "mijuregular";
+  src: url("/fonts/miju-webfont.woff2") format("woff2"), url("/fonts/miju-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-
 .loader-span {
   overflow: hidden;
   display: block;
@@ -34,7 +35,7 @@
 }
 
 .loader-wrap .loader-wrap-heading h1 {
-  font-size: 120px;
+  font-size: 60px;
   z-index: 20;
   color: #e0e0e0;
   text-transform: uppercase;
@@ -42,66 +43,236 @@
   font-family: "Ogg";
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-header .osakaTitle {
-  font-family: "Potta One", cursive;
-  font-size: 62px;
-  margin-left: 47%;
-  background-image: url("/images/pexels-ryutaro-tsukata-5220061.jpg");
-  background-size: cover;
-  background-position: center;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px lavenderblush;
+#osaka-body {
+  /*overscroll-behavior: none;*/
+  overflow-x: hidden;
+  /*cursor: none;*/
 }
 
-main {
-  position: fixed;
-  top: 11.1%;
-  left: 0;
+.hero > p {
+  max-width: 650px;
+  font-size: 1.1em;
+  line-height: 34px;
+}
+
+.hero {
+  height: 100vh;
+  min-height: 30em;
+  padding: 2.5em;
+  color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero h1 {
+  font-size: 4em;
+}
+.hero .explore {
+  position: absolute;
+  top: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hero .explore p {
+  margin-bottom: 2%;
+}
+.hero .explore .line {
+  margin-left: 80%;
+  margin-bottom: 1%;
+}
+.hero .explore a {
+  color: #f5f7fa;
+  cursor: none;
+}
+
+.plusIcon {
+  font-size: smaller;
+}
+.plusIcon:hover {
+  cursor: none;
+}
+.plusIcon:hover::before {
+  content: "\f063";
+  color: #f5f7fa;
+}
+
+.wrapper {
+  width: 100vw;
+}
+
+#sliderOne {
   width: 100vw;
   height: 100vh;
 }
 
-.slider {
-  position: absolute;
-  top: 1%;
-  width: 5000px;
+.gallery {
   height: 100%;
-  will-change: transform;
-}
-
-.slider-inner {
-  position: absolute;
-  top: 0;
-  height: 77%;
-  width: 100%;
+  width: fit-content;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  /*width: 100%;*/
 }
 
-.item {
-  position: relative;
+.gallery .item {
   width: 800px;
-  height: 100%;
-  overflow: hidden;
+  /*min-width: 25em;
+  max-width: 47em;*/
+  height: 83vh;
+  position: relative;
 }
 
-img {
-  position: absolute;
+.gallery h2 {
+  color: #f5f7fa;
+  font-family: "mijuregular", "Potta One", cursive;
+  font-size: 21px;
+  text-transform: uppercase;
+  width: 100px;
+  padding: 1% 0;
+  margin-left: 77%;
+}
+
+.gallery img {
   width: 100%;
+  min-width: 25em;
+  max-width: 47em;
   height: 100%;
-  /*filter: grayscale(100%);*/
-  /*visibility: hidden;*/
-  opacity: 0;
+  object-fit: cover;
+  opacity: 1;
+}
+
+#sliderTwo {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.galleryTwo {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 0.2%;
+  position: relative;
+}
+
+.galleryTwo .item {
+  display: flex;
+  margin-top: 0.4%;
+  height: 100vh;
+  padding: 1% 0;
+}
+
+.galleryTwo h2 {
+  color: #f5f7fa;
+  font-family: "mijuregular", "Potta One", cursive;
+  text-transform: uppercase;
+  position: relative;
+  left: 75%;
+  padding-top: 6%;
+  width: 200px;
+}
+
+.galleryTwo img {
+  width: 90vw;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
 }
 
 canvas {
+  z-index: 2;
+  pointer-events: none;
+}
+
+#sliderThree {
+  width: 100vw;
+  height: 100vh;
+}
+
+.galleryThree {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.galleryThree h2 {
+  color: #f5f7fa;
+  font-family: "VT323", cursive;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.project-image {
+  opacity: 0%;
+  position: absolute;
+  top: -100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+header {
+  position: fixed;
+  margin: 20px 0;
+  width: 100%;
+  height: 22px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  column-gap: 50px;
+  z-index: 1;
+}
+header .osakaTitle {
+  font-family: "mijuregular", "Potta One", cursive;
+  text-transform: uppercase;
+  color: #f5f7fa;
+  margin-left: 60%;
+  align-self: end;
+}
+header .pagesNav ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  list-style-type: none;
+  gap: 10em;
+}
+header .pagesNav ul li {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  letter-spacing: -2px;
+  font-size: 22px;
+}
+header .pagesNav ul li a {
+  color: #f9f8f9;
+  text-decoration: none;
+  cursor: none;
+}
+header .pagesNav ul li a:hover {
+  cursor: none;
+}
+header .pagesNav ul li a .letter {
+  /*text-shadow: 0.03em 0.03em 0.02em #f5f7fa;*/
+  will-change: transform;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+header .pagesNav ul li a .letter:hover {
+  transform: scaleX(0.9) scaleY(1.3);
+}
+
+.letterPink {
+  color: #de667e;
+}
+
+#containerCanvas {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: -1;
   top: 0;
@@ -109,37 +280,25 @@ canvas {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 1;
-  margin-bottom: 15px;
+  height: 120px;
 }
-footer .pagesNav ul {
+footer .social-media {
+  color: #f5f7fa;
+  font-size: 30px;
   display: flex;
-  justify-content: space-evenly;
-  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
 }
-footer .pagesNav ul li {
-  font-family: "Pacifico", cursive;
-  letter-spacing: -1px;
-  font-size: 36px;
-}
-footer .pagesNav ul li a {
-  color: #212E53;
-  text-decoration: none;
-}
-footer .pagesNav ul li a:hover {
-  cursor: pointer;
-}
-footer .pagesNav ul li a .letter {
-  text-shadow: 0.03em 0.03em 0.02em #777;
-  will-change: transform;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-footer .pagesNav ul li a .letter:hover {
-  transform: scaleX(0.9) scaleY(1.3);
+footer .info {
+  color: #f5f7fa;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .cursor {
@@ -150,10 +309,10 @@ footer .pagesNav ul li a .letter:hover {
   top: 0;
   left: 0;
   mix-blend-mode: difference;
-  z-index: 10000;
+  z-index: 5;
 }
 .cursor__ball circle {
-  fill: #ad5389;
+  fill: #f5f7fa;
 }
 
 /* Popup window when clicked */
@@ -217,10 +376,44 @@ footer .pagesNav ul li a .letter:hover {
 
 /* font-family: 'Chokokutai', cursive; */
 /* font-family: 'Pacifico', cursive; */
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0;
+  animation: barFadeIn 0.1s 1.1s forwards;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(33, 46, 83, 0.768627451);
+  border-radius: 100vw;
+}
+
+@keyframes barFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: #ad5389 white;
+    scrollbar-width: auto;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #161616;
 }
 
 .fullscreen {

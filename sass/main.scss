@@ -28,10 +28,50 @@ $redColor: rgba(244, 67, 54, 1);
 $blueColor: rgba(33, 150, 243, 1);
 $navColor: #212E53;
 
+::-webkit-scrollbar {
+    width: 0.4em;
+    height: 0;
+    animation: barFadeIn 0.1s 1.1s forwards;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+    margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #212e53c4;
+    // border: 1px solid rgba(44, 77, 94, 0.9); rgba(57, 107, 132, 0.91)
+    border-radius: 100vw;
+
+}
+
+@keyframes barFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: #ad5389 white;
+        scrollbar-width: auto;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #161616;
+    //cursor: none;
 }
 
 .fullscreen {

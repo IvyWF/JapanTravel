@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
 /* font-family: 'Potta One', cursive; */
 
-$navColor: #212E53;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* font-family: 'VT323', cursive; */
 
+@font-face {
+    font-family: 'mijuregular';
+    src: url('/fonts/miju-webfont.woff2') format('woff2'),
+        url('/fonts/miju-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-.osaka-body {
-    /*background-color: black;*/
-    overscroll-behavior: none;
-    width: 100vw;
-    cursor: none;
 }
 
 .loader-span {
@@ -36,7 +38,7 @@ $navColor: #212E53;
 }
 
 .loader-wrap .loader-wrap-heading h1 {
-    font-size: 120px;
+    font-size: 60px;
     z-index: 20;
     color: #e0e0e0;
     text-transform: uppercase;
@@ -44,108 +46,283 @@ $navColor: #212E53;
     font-family: "Ogg";
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
 
-    .osakaTitle {
-        font-family: 'Potta One', cursive;
-        font-size: 62px;
-        //text-align: center;
-        //padding-top: 30px;
-        margin-left: 47%;
-        background-image: url('/images/pexels-ryutaro-tsukata-5220061.jpg');
-        background-size: cover;
-        background-position: center;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-stroke: 1px lavenderblush;
+#osaka-body {
+    /*overscroll-behavior: none;*/
+    overflow-x: hidden;
+
+    /*cursor: none;*/
+}
+
+.hero>p {
+    max-width: 650px;
+    font-size: 1.1em;
+    line-height: 34px;
+}
+
+.hero {
+    height: 100vh;
+    min-height: 30em;
+    padding: 2.5em;
+    color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    //border: 1px solid white;
+
+    & h1 {
+        font-size: 4em;
+    }
+
+    & .explore {
+        position: absolute;
+        top: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        p {
+            margin-bottom: 2%;
+        }
+
+        & .line {
+            margin-left: 80%;
+            margin-bottom: 1%;
+        }
+
+        & a {
+            color: #f5f7fa;
+            cursor: none;
+        }
     }
 }
 
-main {
-    position: fixed;
-    top: 11.1%;
-    left: 0;
+
+.plusIcon {
+    font-size: smaller;
+
+    &:hover {
+        cursor: none;
+
+        &::before {
+            content: "\f063";
+            color: #f5f7fa;
+        }
+
+    }
+}
+
+.wrapper {
+    width: 100vw;
+}
+
+
+
+// slider 1 = section
+#sliderOne {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.gallery {
+    height: 100%;
+    //min-height: 30em;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    /*width: 100%;*/
+}
+
+.gallery .item {
+    //display: flex;
+    //margin-top: 1%;
+    width: 800px;
+    /*min-width: 25em;
+    max-width: 47em;*/
+    height: 83vh;
+    position: relative;
+    //box-shadow: 0 29px 52px rgb(251, 250, 250), 0 25px 16px rgb(0, 0, 0)49, 0.2;
+}
+
+.gallery h2 {
+    color: #f5f7fa;
+    font-family: 'mijuregular', 'Potta One', cursive;
+    font-size: 21px;
+    text-transform: uppercase;
+    width: 100px;
+    padding: 1% 0;
+    margin-left: 77%;
+}
+
+.gallery img {
+    width: 100%;
+    min-width: 25em;
+    max-width: 47em;
+    height: 100%;
+    object-fit: cover;
+    //padding: 1em 0;
+    opacity: 1;
+}
+
+//Slider 2
+
+#sliderTwo {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+// .sliderWidth {
+//     width: 5000px;
+//     height: 100vh;
+// }
+
+.galleryTwo {
+    height: 100vh;
+    //min-height: 30em;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0.2%;
+    position: relative;
+}
+
+.galleryTwo .item {
+    display: flex;
+    margin-top: 0.4%;
+    height: 100vh;
+    //width: 86vw;
+    padding: 1% 0;
+    //perspective: 500;
+}
+
+.galleryTwo h2 {
+    color: #f5f7fa;
+    font-family: 'mijuregular', 'Potta One', cursive;
+    text-transform: uppercase;
+    position: relative;
+    left: 75%;
+    padding-top: 6%;
+    width: 200px;
+}
+
+.galleryTwo img {
+    width: 90vw;
+    //min-width: 20em;
+    height: 100%;
+    object-fit: cover;
+    //padding: 1em 0;
+    opacity: 1;
+}
+
+// Slider 3
+
+canvas {
+    //position: fixed;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#sliderThree {
+    //position: relative;
     width: 100vw;
     height: 100vh;
 }
 
-.slider {
-    position: absolute;
-    top: 1%;
-    //left: 15%;
-    width: 5000px;
-    height: 100%;
-    will-change: transform;
-}
-
-.slider-inner {
-    position: absolute;
-    top: 0;
-    height: 77%;
+.galleryThree {
+    height: 50vh;
+    //min-height: 30em;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    //flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.item {
-    position: relative;
-    width: 800px;
-    height: 100%;
-    overflow: hidden;
+// .galleryThree .item {
+//     //display: flex;
+//     margin-top: 1%;
+// }
+
+.galleryThree h2 {
+    color: #f5f7fa;
+    font-family: 'VT323', cursive;
+    font-size: 36px;
+    text-transform: uppercase;
+    //padding-top: 6%;
+    // position: relative;
+    // left: 75%;
+    // width: 70px;
 }
 
-img {
+// .galleryThree img {
+//     width: 25vw;
+//     min-width: 15em;
+//     max-width: 30em;
+//     height: 85vh;
+//     object-fit: cover;
+//     padding: 1em 0;
+// }
+
+.project-image {
+    opacity: 0%;
     position: absolute;
-    // left: -100px;
-    width: 100%;
-    height: 100%;
-    // background-size: cover;
-    // background-position: center;
-    /*filter: grayscale(100%);*/
-    /*visibility: hidden;*/
-    opacity: 0;
+    top: -100%;
+    pointer-events: none;
+    user-select: none;
 }
 
-canvas {
+header {
     position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
+    margin: 20px 0;
     width: 100%;
+    height: 22px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    column-gap: 50px;
     z-index: 1;
-    margin-bottom: 15px;
+
+    .osakaTitle {
+        font-family: 'mijuregular', 'Potta One', cursive;
+        text-transform: uppercase;
+        color: #f5f7fa;
+        margin-left: 60%;
+        align-self: end;
+    }
 
     .pagesNav {
 
         ul {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
+            align-items: flex-end;
             list-style-type: none;
+            gap: 10em;
 
             li {
-                font-family: 'Pacifico', cursive;
-                letter-spacing: -1px;
-                font-size: 36px;
+                font-family: Arial, Helvetica, sans-serif, cursive;
+                letter-spacing: -2px;
+                //text-transform: uppercase;
+                font-size: 22px;
 
                 a {
-                    color: $navColor;
+                    color: #f9f8f9;
                     text-decoration: none;
+                    cursor: none;
 
                     &:hover {
-                        cursor: pointer;
+                        cursor: none;
                     }
 
                     .letter {
-                        text-shadow: 0.03em 0.03em 0.02em #777;
+                        /*text-shadow: 0.03em 0.03em 0.02em #f5f7fa;*/
                         will-change: transform;
                         display: inline-block;
                         transition: transform 0.2s ease;
@@ -161,6 +338,51 @@ footer {
     }
 }
 
+.letterPink {
+    color: #de667e;
+}
+
+// canvas {
+//     position: fixed;
+//     z-index: -1;
+//     top: 0;
+//     left: 0;
+// }
+
+#containerCanvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+
+footer {
+    height: 120px;
+
+    .social-media {
+        color: #f5f7fa;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .info {
+        color: #f5f7fa;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
 .cursor {
     pointer-events: none;
 
@@ -169,10 +391,10 @@ footer {
         top: 0;
         left: 0;
         mix-blend-mode: difference;
-        z-index: 10000;
+        z-index: 5;
 
         & circle {
-            fill: #ad5389;
+            fill: #f5f7fa;
         }
     }
 }

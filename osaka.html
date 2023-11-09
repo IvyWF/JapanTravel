@@ -10,7 +10,7 @@
     <title>JapanTravel</title>
 </head>
 
-<body class="osaka-body">
+<body id="osaka-body">
 
     <div class="loader-wrap">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
@@ -24,100 +24,213 @@
         </div>
     </div>
 
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="30" width="30">
+                <circle cx="10" cy="10" r="7" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
     <div class="container">
 
         <header>
-            <h1 class="osakaTitle">大阪</span></h1>
+            <h1 class="osakaTitle">
+                <span class="letter">t</span>
+                <span class="letter letterPink">o</span>
+                <span class="letter letterPink">k</span>
+                <span class="letter letterPink">k</span>
+                <span class="letter">y</span>
+                <span class="letter">o</span>
+            </h1>
+
+            <nav class="pagesNav">
+                <ul class="pagesNav__items">
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter letterPink">O</span>
+                            <span class="letter">h</span>
+                            <span class="letter">a</span>
+                            <span class="letter">y</span>
+                            <span class="letter">ô</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter letterPink">K</span>
+                            <span class="letter">o</span>
+                            <span class="letter">n</span>
+                            <span class="letter">n</span>
+                            <span class="letter">i</span>
+                            <span class="letter">c</span>
+                            <span class="letter">h</span>
+                            <span class="letter">i</span>
+                            <span class="letter">w</span>
+                            <span class="letter">a</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hoverable">
+                            <span class="letter letterPink">K</span>
+                            <span class="letter">o</span>
+                            <span class="letter">n</span>
+                            <span class="letter">b</span>
+                            <span class="letter">a</span>
+                            <span class="letter">n</span>
+                            <span class="letter">w</span>
+                            <span class="letter">a</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="cursor">
-            <div class="cursor__ball cursor__ball--big">
-                <svg height="30" width="30">
-                    <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
-                </svg>
+
+
+        <div class="wrapper"> <!-- container -->
+            <div class="hero">
+                <h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-1">The morning of Tokyo</h1>
+                <p data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">hfurhefuireghuyfglfhusdhskdjhjs
+                </p>
+
+                <div class="explore">
+                    <p>Explore</p>
+                    <div class="line">
+                        <svg height="50" width="500">
+                            <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(255,255,255);stroke-width:2" />
+                        </svg>
+                    </div>
+                    <a href="#slider-inner1" class="hoverable">
+                        <i class="fa-solid fa-plus plusIcon" id="galleryOne"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="cursor__ball cursor__ball--small">
-                <svg height="10" width="10">
-                    <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
-                </svg>
-            </div>
-        </div>
 
-        <main>
-            <div class="slider">
-                <div class="slider-inner">
-                    <div class="item hoverable">
+            <div class="gallery-wrapper" id="sliderOne">
+                <div class="gallery" id="slider-inner1"> <!--class: pin-wrap-->
+                    <div class="item">
+                        <h2 id="one">Morning///001</h2>
                         <img src="images/osaka/1.jpg" alt="">
                     </div>
-                    <div class="item hoverable">
+                    <div class="item">
+                        <h2 id="two">Morning///002</h2>
                         <img src="images/osaka/2.jpg" alt="">
                     </div>
-                    <div class="item hoverable">
+                    <div class="item">
+                        <h2 id="three">Morning///003</h2>
                         <img src="images/osaka/3.jpg" alt="">
                     </div>
-                    <div class="item hoverable">
+                    <div class="item">
+                        <h2 id="four">Morning///004</h2>
                         <img src="images/osaka/4.jpg" alt="">
                     </div>
-                    <div class="item hoverable">
+                    <div class="item">
+                        <h2 id="five">Morning///005</h2>
                         <img src="images/osaka/5.jpg" alt="">
                     </div>
-                    <div class="item hoverable">
+                    <div class="item">
+                        <h2 id="six">Morning///006</h2>
                         <img src="images/osaka/6.jpg" alt="">
                     </div>
                 </div>
             </div>
 
-        </main>
+
+            <div class="gallery-wrapper-Two" id="sliderTwo">
+                <div class="sliderWidth">
+                    <div class="galleryTwo" id="slider-inner2">
+                        <div class="item">
+                            <h2>01</h2>
+                            <img src="images/osaka/1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <h2>02</h2>
+                            <img src="images/osaka/2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <h2>03</h2>
+                            <img src="images/osaka/3.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <h2>04</h2>
+                            <img src="images/osaka/4.jpg" alt="">
+                        </div>
+                        <!-- <div class="item hoverable">
+                            <h2>Building</h2>
+                            <img src="images/osaka/5.jpg" alt="">
+                        </div>
+                        <div class="item hoverable">
+                            <h2>At dusk</h2>
+                            <img src="images/osaka/6.jpg" alt=""> -->
+                    </div>
+                </div>
+            </div>
+
+            <section class="gallery-wrapper-Three" id="sliderThree">
+
+                <div class="galleryThree" id="slider-inner3">
+                    <div class="item">
+                        <h2>Tokyo///001</h2>
+                        <!-- <img src="images/osaka/1.jpg" alt=""> -->
+                    </div>
+                    <div class="item">
+                        <h2>Tokyo///002</h2>
+                        <!-- <img src="images/osaka/2.jpg" alt=""> -->
+                    </div>
+                    <div class="item">
+                        <h2>Tokyo///003</h2>
+                        <!-- <img src="images/osaka/3.jpg" alt=""> -->
+                    </div>
+                    <div class="item">
+                        <h2>Tokyo///004</h2>
+                        <!-- <img src="images/osaka/4.jpg" alt=""> -->
+                    </div>
+                    <div class="item">
+                        <h2>Tokyo///005</h2>
+                        <!-- <img src="images/osaka/5.jpg" alt=""> -->
+                    </div>
+                    <div class="item">
+                        <h2>Tokyo///006</h2>
+                        <!-- <img src="images/osaka/6.jpg" alt=""> -->
+                    </div>
+                </div>
+
+                <canvas></canvas>
+            </section>
+
+        </div>
+
+
 
         <footer>
 
-            <nav class="pagesNav">
-                <ul class="pagesNav__items">
-                    <li>
-                        <a href="index.html" class="hoverable">
-                            <span class="letter">H</span>
-                            <span class="letter">o</span>
-                            <span class="letter">m</span>
-                            <span class="letter">e</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hoverable">
-                            <span class="letter">O</span>
-                            <span class="letter">s</span>
-                            <span class="letter">a</span>
-                            <span class="letter">k</span>
-                            <span class="letter">a</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hoverable">
-                            <span class="letter">T</span>
-                            <span class="letter">o</span>
-                            <span class="letter">k</span>
-                            <span class="letter">y</span>
-                            <span class="letter">o</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hoverable">
-                            <span class="letter">K</span>
-                            <span class="letter">y</span>
-                            <span class="letter">o</span>
-                            <span class="letter">t</span>
-                            <span class="letter">o</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="social-media">
+                <i class="fa-brands fa-instagram icon-3d"></i>
+                <i class="fa-brands fa-facebook-f icon-3d"></i>
+                <i class="fa-brands fa-pinterest-p icon-3d"></i>
+            </div>
+
+            <div class="info">
+                <!-- <h3>Contact me</h3> -->
+                <p>Email: hdueizhfur@gmail.com</p>
+                <p>Tel: 6781647386</p>
+            </div>
 
         </footer>
 
     </div>
 
-    <script src="scripts/preload.js"></script>
+    <!-- <script src="scripts/preload.js"></script> -->
     <script src="scripts/cursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="scripts/osaka.js"></script>
     <script src="scripts/gallery.js"></script>
 </body>

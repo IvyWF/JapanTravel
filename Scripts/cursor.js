@@ -19,8 +19,8 @@ function onMouseMove(e) {
         duration: .4
     })
     gsap.to(smallBall, {
-        x: e.clientX - 5,
-        y: e.clientY - 9,
+        x: e.clientX + 9,
+        y: e.clientY + 9,
         duration: .1
     })
 }

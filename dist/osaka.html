@@ -26,14 +26,14 @@
 
     <div class="cursor">
         <div class="cursor__ball cursor__ball--big">
-            <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            <svg height="60" width="60">
+                <circle cx="30" cy="30" r="27" stroke-width="2"></circle>
             </svg>
         </div>
 
         <div class="cursor__ball cursor__ball--small">
-            <svg height="30" width="30">
-                <circle cx="10" cy="10" r="7" stroke-width="0"></circle>
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="2" stroke-width="0"></circle>
             </svg>
         </div>
     </div>
@@ -50,9 +50,9 @@
                 <span class="letter">o</span>
             </h1>
 
-            <nav class="pagesNav">
-                <ul class="pagesNav__items">
-                    <li>
+            <!-- <nav class="pagesNav">
+                <div class="pagesNav__items">
+                    <div class="pagesNav__items--li">
                         <a href="#" class="hoverable">
                             <span class="letter letterPink">O</span>
                             <span class="letter">h</span>
@@ -60,8 +60,8 @@
                             <span class="letter">y</span>
                             <span class="letter">ô</span>
                         </a>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="pagesNav__items--li">
                         <a href="#" class="hoverable">
                             <span class="letter letterPink">K</span>
                             <span class="letter">o</span>
@@ -74,8 +74,8 @@
                             <span class="letter">w</span>
                             <span class="letter">a</span>
                         </a>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="pagesNav__items--li">
                         <a href="#" class="hoverable">
                             <span class="letter letterPink">K</span>
                             <span class="letter">o</span>
@@ -86,89 +86,114 @@
                             <span class="letter">w</span>
                             <span class="letter">a</span>
                         </a>
-                    </li>
-                </ul>
-            </nav>
+                    </div>
+                </div>
+            </nav> -->
         </header>
 
 
 
         <div class="wrapper"> <!-- container -->
             <div class="hero">
-                <h1 data-scroll="" data-scroll-direction="horizontal" data-scroll-speed="-1">The morning of Tokyo</h1>
-                <p data-scroll="" data-scroll-direction="horizontal" data-scroll-speed="-2">hfurhefuireghuyfglfhusdhskdjhjs
-                </p>
+                <div class="main">
+                    <div class="ul ulOne">
+                        <a href="#" class="li hoverable one">
+                            <span class="letterPink">O</span>hayô
+                        </a>
+                        <svg height="100" width="50">
+                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4"></line>
+                        </svg>
 
-                <div class="explore">
-                    <p>Explore</p>
+                        <a href="#" class="li hoverable">
+                            <span class="letterPink">K</span>onbanwa
+                        </a>
+
+                        <svg height="100" width="50">
+                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4"></line>
+                        </svg>
+
+                        <a href="#" class="li hoverable">
+                            <span class="letterPink">K</span>onnichiwa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mouse_scroll">
+
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div>
+                        <span class="m_scroll_arrows unu"></span>
+                        <span class="m_scroll_arrows doi"></span>
+                        <span class="m_scroll_arrows trei"></span>
+                    </div>
+                </div>
+
+                <!-- <div class="explore">
+                    <p class="explore__title">Explore</p>
                     <div class="line">
                         <svg height="50" width="500">
-                            <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(255,255,255);stroke-width:2"></line>
+                            <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(255,255,255);stroke-width:2" />
                         </svg>
                     </div>
                     <a href="#slider-inner1" class="hoverable">
-                        <i class="fa-solid fa-plus plusIcon" id="galleryOne"></i>
+                        <i class="fa-solid fa-plus plusIcon"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
 
 
             <div class="gallery-wrapper" id="sliderOne">
-                <div class="gallery" id="slider-inner1"> <!--class: pin-wrap-->
+                <div class="gallery galleryPopupOne" id="slider-inner1">
                     <div class="item">
                         <h2 id="one">Morning///001</h2>
-                        <img src="/1.20deb4b0.jpg" alt="">
+                        <img src="/1.20deb4b0.jpg" alt="Morning///001">
                     </div>
                     <div class="item">
                         <h2 id="two">Morning///002</h2>
-                        <img src="/2.a3a90409.jpg" alt="">
+                        <img src="/2.a3a90409.jpg" alt="Morning///002">
                     </div>
                     <div class="item">
                         <h2 id="three">Morning///003</h2>
-                        <img src="/3.a7d98bb4.jpg" alt="">
+                        <img src="/3.a7d98bb4.jpg" alt="Morning///003">
                     </div>
                     <div class="item">
                         <h2 id="four">Morning///004</h2>
-                        <img src="/4.7cf12fc2.jpg" alt="">
+                        <img src="/4.7cf12fc2.jpg" alt="Morning///004">
                     </div>
                     <div class="item">
                         <h2 id="five">Morning///005</h2>
-                        <img src="/5.534041c2.jpg" alt="">
+                        <img src="/5.534041c2.jpg" alt="Morning///005">
                     </div>
                     <div class="item">
                         <h2 id="six">Morning///006</h2>
-                        <img src="/6.dfffe6ce.jpg" alt="">
+                        <img src="/6.dfffe6ce.jpg" alt="Morning///006">
                     </div>
                 </div>
             </div>
 
 
             <div class="gallery-wrapper-Two" id="sliderTwo">
-                <div class="sliderWidth">
-                    <div class="galleryTwo" id="slider-inner2">
-                        <div class="item">
-                            <h2>01</h2>
-                            <img src="/1.20deb4b0.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <h2>02</h2>
-                            <img src="/2.a3a90409.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <h2>03</h2>
-                            <img src="/3.a7d98bb4.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <h2>04</h2>
-                            <img src="/4.7cf12fc2.jpg" alt="">
-                        </div>
-                        <!-- <div class="item hoverable">
-                            <h2>Building</h2>
-                            <img src="images/osaka/5.jpg" alt="">
-                        </div>
-                        <div class="item hoverable">
-                            <h2>At dusk</h2>
-                            <img src="images/osaka/6.jpg" alt=""> -->
+                <div class="galleryTwo galleryPopupTwo" id="slider-inner2">
+                    <div class="item item3">
+                        <h2>Morning///001</h2>
+                        <img src="/1.20deb4b0.jpg" alt="Morning///001">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///002</h2>
+                        <img src="/2.a3a90409.jpg" alt="Morning///002">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///003</h2>
+                        <img src="/3.a7d98bb4.jpg" alt="Morning///003">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///004</h2>
+                        <img src="/4.7cf12fc2.jpg" alt="Morning///004">
                     </div>
                 </div>
             </div>
@@ -177,32 +202,32 @@
 
                 <div class="galleryThree" id="slider-inner3">
                     <div class="item">
-                        <h2>Tokyo///001</h2>
-                        <!-- <img src="images/osaka/1.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/1.jpg">Tokyo///001
+                            <img src="/1.20deb4b0.jpg" alt="">
+                        </h2>
+
                     </div>
                     <div class="item">
-                        <h2>Tokyo///002</h2>
-                        <!-- <img src="images/osaka/2.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/2.jpg">Tokyo///002</h2>
                     </div>
                     <div class="item">
-                        <h2>Tokyo///003</h2>
-                        <!-- <img src="images/osaka/3.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/3.jpg">Tokyo///003</h2>
                     </div>
                     <div class="item">
-                        <h2>Tokyo///004</h2>
-                        <!-- <img src="images/osaka/4.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/4.jpg">Tokyo///004</h2>
                     </div>
                     <div class="item">
-                        <h2>Tokyo///005</h2>
-                        <!-- <img src="images/osaka/5.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/5.jpg">Tokyo///005</h2>
                     </div>
                     <div class="item">
-                        <h2>Tokyo///006</h2>
-                        <!-- <img src="images/osaka/6.jpg" alt=""> -->
+                        <h2 data-original="images/osaka/6.jpg">Tokyo///006</h2>
                     </div>
                 </div>
-
-                <canvas></canvas>
+                <canvas class="canvas2"></canvas>
+                <div class="modal">
+                    <img src="/1.20deb4b0.jpg" alt="" class="full-img">
+                    <p class="caption">Tokyo///001</p>
+                </div>
             </section>
 
         </div>
@@ -211,15 +236,16 @@
 
         <footer>
 
-            <div class="social-media">
+            <!-- <div class="social-media">
                 <i class="fa-brands fa-instagram icon-3d"></i>
                 <i class="fa-brands fa-facebook-f icon-3d"></i>
                 <i class="fa-brands fa-pinterest-p icon-3d"></i>
-            </div>
+            </div> -->
 
             <div class="info">
                 <!-- <h3>Contact me</h3> -->
                 <p>Email: hdueizhfur@gmail.com</p>
+                <p>Github</p>
                 <p>Tel: 6781647386</p>
             </div>
 
@@ -227,11 +253,12 @@
 
     </div>
 
+
     <!-- <script src="scripts/preload.js"></script> -->
     <script src="/cursor.ed5dce8c.js"></script>
+    <script src="/descriptionAnim.82c760c6.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="/osaka.4dfe7744.js"></script>
+    <script src="/sliders.399d40f4.js"></script>
     <script src="/gallery.61d82d0d.js"></script>
 </body>
 

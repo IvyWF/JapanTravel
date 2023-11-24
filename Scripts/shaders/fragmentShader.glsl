@@ -1,12 +1,26 @@
 uniform sampler2D uTexture;
+uniform float uAlpha;
+uniform vec2 uOffset;
 varying vec2 vUv;
 
-void main() {
-    vec4 imageView = texture2D(uTexture, vUv);
-
-    gl_FragColor = imageView;
-    //gl_FragColor = vec4(vUv, 0., 1.);
+vec3 rgbShift(sampler2D textureimage, vec2 uv, vec2 offset) {
+    float r = texture2D(textureimage, uv + offset).r;
+    vec2 gb = texture2D(textureimage, uv).gb;
+    return vec3(r, gb);
 }
+
+void main() {
+    // vec3 color = texture2D(uTexture, vUv).rgb;
+    vec3 color = rgbShift(uTexture, vUv, uOffset);
+    gl_FragColor = vec4(color, uAlpha);
+}
+
+// void main() {
+//     vec4 imageView = texture2D(uTexture, vUv);
+
+//     gl_FragColor = vec4(imageView);
+//     //gl_FragColor = vec4(vUv, 0., 1.);
+// }
 
 // varying float vNoise;
 // varying vec2 vUv;

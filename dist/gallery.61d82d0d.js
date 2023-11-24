@@ -117,15 +117,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/gallery.js":[function(require,module,exports) {
+})({"images/osaka/1.jpg":[function(require,module,exports) {
+module.exports = "/1.20deb4b0.jpg";
+},{}],"images/osaka/2.jpg":[function(require,module,exports) {
+module.exports = "/2.a3a90409.jpg";
+},{}],"images/osaka/3.jpg":[function(require,module,exports) {
+module.exports = "/3.a7d98bb4.jpg";
+},{}],"images/osaka/4.jpg":[function(require,module,exports) {
+module.exports = "/4.7cf12fc2.jpg";
+},{}],"images/osaka/5.jpg":[function(require,module,exports) {
+module.exports = "/5.534041c2.jpg";
+},{}],"images/osaka/6.jpg":[function(require,module,exports) {
+module.exports = "/6.dfffe6ce.jpg";
+},{}],"scripts/gallery.js":[function(require,module,exports) {
+"use strict";
+
+var _ = _interopRequireDefault(require("../images/osaka/1.jpg"));
+var _2 = _interopRequireDefault(require("../images/osaka/2.jpg"));
+var _3 = _interopRequireDefault(require("../images/osaka/3.jpg"));
+var _4 = _interopRequireDefault(require("../images/osaka/4.jpg"));
+var _5 = _interopRequireDefault(require("../images/osaka/5.jpg"));
+var _6 = _interopRequireDefault(require("../images/osaka/6.jpg"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-var galleryImages = document.querySelectorAll("img");
-//console.log(galleryImages);
+var galleryImages = document.querySelectorAll(".galleryPopupOne img");
 var getLatestOpenedImage;
 var windowWidth = window.innerWidth;
 if (galleryImages) {
@@ -142,9 +162,14 @@ if (galleryImages) {
       //newImageWindow.setAttribute("onclick", closeImage()); => this 'onclick' doesn't work any more. Need to create an addEventListener
 
       var newImage = document.createElement("img");
+      var imageTitle = document.createElement("p");
       newImageWindow.appendChild(newImage);
+      newImageWindow.appendChild(imageTitle);
       newImage.setAttribute("src", getImageUrl);
       newImage.setAttribute("id", "current-img");
+      newImage.setAttribute("alt", "Morning///00" + (index + 1));
+      var alt = newImage.getAttribute('alt');
+      imageTitle.textContent = alt;
       newImage.onload = function () {
         var imgWidth = this.width;
         var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
@@ -158,7 +183,11 @@ if (galleryImages) {
           document.querySelector("#current-img").remove();
           var getImgWindow = document.querySelector(".img-window");
           var newImg = document.createElement("img");
+          var imgTitle = document.createElement("p");
           getImgWindow.appendChild(newImg);
+          getImgWindow.appendChild(imgTitle);
+          imgTitle.style.cssText = "z-index: 100;";
+          imgTitle.style.cssText = "background-color: black;";
           var images = _toConsumableArray(document.querySelectorAll("img"));
           // galleryImages.forEach(image, index) {
           //     let getUrl = image.src;
@@ -166,12 +195,13 @@ if (galleryImages) {
           //     let setNewUrl = getUrlPos[1];
           // }
           var calcNewImg = getLatestOpenedImage + 1;
-          console.log(calcNewImg);
           if (calcNewImg > galleryImages.length) {
             calcNewImg = 1;
           }
+          console.log(calcNewImg);
           var getNewImgUrl = images[calcNewImg - 1].src;
-          console.log(getNewImgUrl);
+          var alT = calcNewImg;
+          imgTitle.textContent = "Morning///00".concat(alT);
           newImg.setAttribute("src", getNewImgUrl);
           newImg.setAttribute("id", "current-img");
           getLatestOpenedImage = calcNewImg;
@@ -192,15 +222,123 @@ if (galleryImages) {
           document.querySelector("#current-img").remove();
           var getImgWindow = document.querySelector(".img-window");
           var newImg = document.createElement("img");
+          var imgTitle = document.createElement("p");
           getImgWindow.appendChild(newImg);
+          getImgWindow.appendChild(imgTitle);
+          imgTitle.style.cssText = "z-index: 100;";
+          imgTitle.style.cssText = "background-color: black;";
           var images = _toConsumableArray(document.querySelectorAll("img"));
           var calcNewImg = getLatestOpenedImage - 1;
-          console.log(calcNewImg);
           if (calcNewImg < 1) {
             calcNewImg = galleryImages.length;
           }
           var getNewImgUrl = images[calcNewImg - 1].src;
-          console.log(getNewImgUrl);
+          var alT = calcNewImg;
+          imgTitle.textContent = "Morning///00".concat(alT);
+          newImg.setAttribute("src", getNewImgUrl);
+          newImg.setAttribute("id", "current-img");
+          getLatestOpenedImage = calcNewImg;
+          newImg.onload = function () {
+            var imgWidth = this.width;
+            var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+            var prevBtn = document.querySelector(".img-btn-prev");
+            prevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+          };
+        });
+        newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+      };
+    };
+  });
+}
+var galleryTwoImages = document.querySelectorAll(".galleryPopupTwo img");
+var getLatestOpenImage;
+if (galleryTwoImages) {
+  galleryTwoImages.forEach(function (image, index) {
+    image.onclick = function () {
+      var getImageUrl = image.src;
+      getLatestOpenImage = index + 1;
+      var container = document.body;
+      var newImageWindow = document.createElement("div");
+      container.appendChild(newImageWindow);
+      newImageWindow.setAttribute("class", "img-window");
+      newImageWindow.addEventListener('click', closeImage);
+
+      //newImageWindow.setAttribute("onclick", closeImage()); => this 'onclick' doesn't work any more. Need to create an addEventListener
+
+      var newImage = document.createElement("img");
+      var imageTitle = document.createElement("p");
+      newImageWindow.appendChild(newImage);
+      newImageWindow.appendChild(imageTitle);
+      newImage.setAttribute("src", getImageUrl);
+      newImage.setAttribute("id", "current-img");
+      newImage.setAttribute("alt", "Morning///00" + (index + 1));
+      var alt = newImage.getAttribute('alt');
+      imageTitle.textContent = alt;
+      newImage.onload = function () {
+        var imgWidth = this.width;
+        var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+        var newNextBtn = document.createElement("a");
+        var btnNextText = document.createTextNode(">");
+        newNextBtn.appendChild(btnNextText);
+        container.appendChild(newNextBtn);
+        newNextBtn.setAttribute("class", "img-btn-next");
+        newNextBtn.addEventListener('click', function changeImage() {
+          //console.log(setNewImgUrl);
+          document.querySelector("#current-img").remove();
+          var getImgWindow = document.querySelector(".img-window");
+          var newImg = document.createElement("img");
+          var imgTitle = document.createElement("p");
+          getImgWindow.appendChild(newImg);
+          getImgWindow.appendChild(imgTitle);
+          imgTitle.style.cssText = "z-index: 100;";
+          imgTitle.style.cssText = "background-color: black;";
+          var images = _toConsumableArray(document.querySelectorAll("img"));
+          // galleryImages.forEach(image, index) {
+          //     let getUrl = image.src;
+          //     let getUrlPos = getUrl.split("http://localhost:1234/");
+          //     let setNewUrl = getUrlPos[1];
+          // }
+          var calcNewImg = getLatestOpenImage + 1;
+          if (calcNewImg > galleryTwoImages.length) {
+            calcNewImg = 1;
+          }
+          console.log(calcNewImg);
+          var getNewImgUrl = images[calcNewImg - 1].src;
+          var alT = calcNewImg;
+          imgTitle.textContent = "Morning///00".concat(alT);
+          newImg.setAttribute("src", getNewImgUrl);
+          newImg.setAttribute("id", "current-img");
+          getLatestOpenImage = calcNewImg;
+          newImg.onload = function () {
+            var imgWidth = this.width;
+            var calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+            var nextBtn = document.querySelector(".img-btn-next");
+            nextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
+          };
+        });
+        newNextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
+        var newPrevBtn = document.createElement("a");
+        var btnPrevText = document.createTextNode("<");
+        newPrevBtn.appendChild(btnPrevText);
+        container.appendChild(newPrevBtn);
+        newPrevBtn.setAttribute("class", "img-btn-prev");
+        newPrevBtn.addEventListener('click', function changeImage() {
+          document.querySelector("#current-img").remove();
+          var getImgWindow = document.querySelector(".img-window");
+          var newImg = document.createElement("img");
+          var imgTitle = document.createElement("p");
+          getImgWindow.appendChild(newImg);
+          getImgWindow.appendChild(imgTitle);
+          imgTitle.style.cssText = "z-index: 100;";
+          imgTitle.style.cssText = "background-color: black;";
+          var images = _toConsumableArray(document.querySelectorAll("img"));
+          var calcNewImg = getLatestOpenImage - 1;
+          if (calcNewImg < 1) {
+            calcNewImg = galleryTwoImages.length;
+          }
+          var getNewImgUrl = images[calcNewImg - 1].src;
+          var alT = calcNewImg;
+          imgTitle.textContent = "Morning///00".concat(alT);
           newImg.setAttribute("src", getNewImgUrl);
           newImg.setAttribute("id", "current-img");
           getLatestOpenedImage = calcNewImg;
@@ -221,7 +359,37 @@ function closeImage() {
   document.querySelector(".img-btn-next").remove();
   document.querySelector(".img-btn-prev").remove();
 }
-},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+// Popup modal for 3rd slider
+var modal = document.querySelector('.modal');
+var titles = document.querySelectorAll('.galleryThree h2');
+var imgOpened = document.querySelector('.full-img');
+var caption = document.querySelector('.caption');
+// Load images into an array for reference
+var images = [_.default, _2.default, _3.default, _4.default, _5.default, _6.default];
+titles.forEach(function (title, index) {
+  title.addEventListener('click', function () {
+    modal.classList.add('open');
+    imgOpened.classList.add('open');
+    var imgOpenedSrc = images[index];
+    imgOpened.src = imgOpenedSrc;
+    var imgTitle = title.innerHTML;
+    caption.textContent = imgTitle;
+  });
+});
+modal.addEventListener('click', function (e) {
+  if (e.target.classList.contains('modal')) {
+    modal.classList.remove('open');
+    imgOpened.classList.remove('open');
+  }
+});
+imgOpened.addEventListener('click', function (e) {
+  if (e.target.classList.contains('full-img')) {
+    modal.classList.remove('open');
+    imgOpened.classList.remove('open');
+  }
+});
+},{"../images/osaka/1.jpg":"images/osaka/1.jpg","../images/osaka/2.jpg":"images/osaka/2.jpg","../images/osaka/3.jpg":"images/osaka/3.jpg","../images/osaka/4.jpg":"images/osaka/4.jpg","../images/osaka/5.jpg":"images/osaka/5.jpg","../images/osaka/6.jpg":"images/osaka/6.jpg"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -246,7 +414,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49415" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50247" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

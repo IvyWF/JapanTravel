@@ -56,6 +56,28 @@ let amountToScroll = (galleryWidth - window.innerWidth) + 50;
 //console.log(amountToScroll);
 
 let imagesGallery = document.querySelectorAll('.gallery img');
+let imagesTitles = document.querySelectorAll('.gallery h2');
+
+imagesTitles.forEach(title => {
+    let tlTitles = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#sliderOne",
+            start: "top 30%",
+            end: "top 10%",
+            //pin: true,
+            scrub: true,
+            //markers: true,
+        }
+    });
+
+    tlTitles.set(title, { yPercent: 100, opacity: 0 });
+    tlTitles.to(title, {
+        yPercent: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power1.out",
+    });
+})
 
 imagesGallery.forEach(image => {
     let tlGallery = gsap.timeline({
@@ -69,7 +91,7 @@ imagesGallery.forEach(image => {
         }
     });
 
-    tlGallery.set(image, { yPercent: 100, opacity: 0 });
+    tlGallery.set(image, { yPercent: 100, opacity: 0, borderRadius: 5 });
     tlGallery.to(image, {
         yPercent: 0,
         opacity: 1,
@@ -120,11 +142,11 @@ let galleryTwoWidth = galleryTwo.offsetWidth;
 let amountToScrollTwo = (galleryTwoWidth - window.innerWidth) + 110;
 //console.log(amountToScrollTwo);
 
-gsap.set(galleryTwo, { xPercent: -65, yPercent: 20, scale: 0 }); //, yPercent: 20, scale: 0
+gsap.set(galleryTwo, { xPercent: -65, yPercent: 20 }); //, yPercent: 20, scale: 0
 
 gsap.to(galleryTwo, {
     yPercent: 0,
-    scale: 1,
+    //scale: 1,
     //opacity: 1,
     duration: 1.5,
     ease: "power1.out",
@@ -182,16 +204,6 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 
-const canvas = document.querySelector('.canvas2');
-const ctx = canvas.getContext('2d');
-const links = [...document.querySelectorAll('.galleryThree h2')];
-
-// console.log(canvas);
-// console.log(links);
-
-function lerp(start, end, t) {
-    return start * (1 - t) + end * t;
-}
 
 import image1 from '../images/osaka/1.jpg';
 import image2 from '../images/osaka/2.jpg';
@@ -199,6 +211,23 @@ import image3 from '../images/osaka/3.jpg';
 import image4 from '../images/osaka/4.jpg';
 import image5 from '../images/osaka/5.jpg';
 import image6 from '../images/osaka/6.jpg';
+
+const matchPc = window.matchMedia("(min-width: 993px)");
+
+function pcHoverEffect() {
+
+}
+
+const canvas = document.querySelector('.canvas2');
+const ctx = canvas.getContext('2d');
+const links = [...document.querySelectorAll('.galleryThree h2')];
+
+
+
+function lerp(start, end, t) {
+    return start * (1 - t) + end * t;
+}
+
 
 let imgIndex = 0;
 // Load images into an array for reference
@@ -211,8 +240,6 @@ const images = [
     image6,
 ];
 
-//console.log(images)
-
 let imageArr = [];
 
 // Canvas mousemove variables
@@ -222,21 +249,26 @@ let currentX = 0;
 let currentY = 0;
 
 window.addEventListener('mousemove', (e) => {
-    targetX = e.clientX;
-    targetY = e.clientY;
-    //console.log(targetX, targetY);
+
+    if (matchPc.matches) {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        //console.log(targetX, targetY);
+    }
+
 })
 
 
 images.forEach((image, idx) => {
 
-    let elImage = new Image(700);
-    elImage.src = image;
-    //console.log(elImage.src)
+    if (matchPc.matches) {
+        let elImage = new Image(700);
+        elImage.src = image;
 
-    elImage.classList.add('project-image');
-    document.body.append(elImage);
-    imageArr.push(elImage);
+        elImage.classList.add('project-image');
+        document.body.append(elImage);
+        imageArr.push(elImage);
+    }
 
 })
 
@@ -246,115 +278,97 @@ let percent = 0;
 let target = 0;
 
 function drawImage(idx) {
-    let { width, height } = imageArr[idx].getBoundingClientRect();
-    canvas.width = (width / 2) * window.devicePixelRatio;
-    canvas.height = (height / 2) * window.devicePixelRatio;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`
 
-    // pixelate by diabling the smoothing
-    ctx.webkitImageSmoothingEnabled = false;
-    ctx.mozImageSmoothingEnabled = false;
-    ctx.msSmoothingEnabled = false;
-    ctx.imageSmoothingEnabled = false;
+    if (matchPc.matches) {
+        let { width, height } = imageArr[idx].getBoundingClientRect();
+        canvas.width = (width / 2) * window.devicePixelRatio;
+        canvas.height = (height / 2) * window.devicePixelRatio;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`
 
-    if (target === 1) {
-        // 2 speeds to make the effect more gradual
-        if (percent < 0.2) {
-            percent += .01;
-        } else if (percent < 1) {
-            percent += .1;
+        // pixelate by diabling the smoothing
+        ctx.webkitImageSmoothingEnabled = false;
+        ctx.mozImageSmoothingEnabled = false;
+        ctx.msSmoothingEnabled = false;
+        ctx.imageSmoothingEnabled = false;
+
+        if (target === 1) {
+            // 2 speeds to make the effect more gradual
+            if (percent < 0.2) {
+                percent += .01;
+            } else if (percent < 1) {
+                percent += .1;
+            }
+        } else if (target === 0) {
+            if (percent > 0.2) {
+                percent -= .3;
+            } else if (percent > 0) {
+                percent -= .01;
+            }
         }
-    } else if (target === 0) {
-        if (percent > 0.2) {
-            percent -= .3;
-        } else if (percent > 0) {
-            percent -= .01;
+
+        let scaledWidth = width * percent;
+        let scaledHeight = height * percent;
+
+        if (percent >= 1) {
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            ctx.drawImage(imageArr[idx], 0, 0, width, height);
+        } else {
+            ctx.drawImage(imageArr[idx], 0, 0, scaledWidth, scaledHeight);
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            if (canvas.width !== 0 && canvas.height !== 0) {
+                ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, width, height);
+            }
         }
     }
 
-    let scaledWidth = width * percent;
-    let scaledHeight = height * percent;
-
-    if (percent >= 1) {
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        ctx.drawImage(imageArr[idx], 0, 0, width, height);
-    } else {
-        ctx.drawImage(imageArr[idx], 0, 0, scaledWidth, scaledHeight);
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        if (canvas.width !== 0 && canvas.height !== 0) {
-            ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, width, height);
-        }
-    }
 }
 
 for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('mouseover', () => {
-        for (let j = 0; j < links.length; j++) {
-            if (j !== i) {
-                links[j].style.opacity = 0.2;
-                links[j].style.zIndex = 0;
-            } else {
-                links[j].style.opacity = 1;
-                links[j].style.zIndex = 3;
+
+    if (matchPc.matches) {
+        links[i].addEventListener('mouseover', () => {
+            for (let j = 0; j < links.length; j++) {
+                if (j !== i) {
+                    links[j].style.opacity = 0.2;
+                    links[j].style.zIndex = 0;
+                } else {
+                    links[j].style.opacity = 1;
+                    links[j].style.zIndex = 3;
+                }
             }
-        }
-    })
+        })
 
-    links[i].addEventListener('mouseleave', () => {
-        for (let i = 0; i < links.length; i++) {
-            links[i].style.opacity = 1;
-        }
-    })
+        links[i].addEventListener('mouseleave', () => {
+            for (let i = 0; i < links.length; i++) {
+                links[i].style.opacity = 1;
+            }
+        })
 
-    links[i].addEventListener('mouseenter', () => {
-        imgIndex = i;
-        target = 1;
-    });
+        links[i].addEventListener('mouseenter', () => {
+            imgIndex = i;
+            target = 1;
+        });
 
-    links[i].addEventListener('mouseleave', () => {
-        target = 0;
-    })
+        links[i].addEventListener('mouseleave', () => {
+            target = 0;
+        })
+    }
 }
 
 function animate() {
-    currentX = lerp(currentX, targetX, 0.075);
-    currentY = lerp(currentY, targetY, 0.075);
-    let { width, height } = imageArr[imgIndex].getBoundingClientRect();
-    canvas.style.transform = `translate3d(${currentX - (width / 2)}px, ${currentY - (height * 2)}px, 0)`;
-    drawImage(imgIndex);
-    window.requestAnimationFrame(animate);
+
+    if (matchPc.matches) {
+        currentX = lerp(currentX, targetX, 0.075);
+        currentY = lerp(currentY, targetY, 0.075);
+        let { width, height } = imageArr[imgIndex].getBoundingClientRect();
+        canvas.style.transform = `translate3d(${currentX - (width / 2)}px, ${currentY - (height * 2)}px, 0)`;
+        drawImage(imgIndex);
+        window.requestAnimationFrame(animate);
+    }
 }
 
 animate();
 
 
-// Text-Reveal 2nd Slider
-
-document.querySelectorAll('.item3').forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-        gsap.set(this.querySelectorAll(".shape span"), { opacity: 0 });
-        gsap.to(this.querySelectorAll(".shape span"), {
-            opacity: 1,
-            duration: 0.075,
-            stagger: {
-                from: "random",
-                each: 0.02
-            },
-            ease: "power2.out"
-        });
-    });
-
-    item.addEventListener("mouseleave", function () {
-        gsap.to(this.querySelectorAll(".shape span"), {
-            opacity: 0,
-            duration: 0.075,
-            stagger: {
-                from: "random",
-                each: 0.02
-            },
-            ease: "power2.in"
-        });
-    });
-});
 

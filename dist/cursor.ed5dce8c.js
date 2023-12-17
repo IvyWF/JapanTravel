@@ -5589,6 +5589,130 @@ function onMouseHoverOut() {
     duration: .3
   });
 }
+var matchPc = window.matchMedia("(min-width: 993px)");
+var matchTablet = window.matchMedia("(min-width: 768px) and (max-width: 992px)");
+var matchMobile = window.matchMedia("(max-width: 767px)");
+
+// Date and Time 
+var todaydate = document.querySelector('#date');
+var todaytime = document.querySelector('#time');
+var options = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'long',
+  timeZone: 'Asia/Tokyo'
+};
+var formatter = new Intl.DateTimeFormat('en-US', options);
+var date = new Date();
+//console.log(formatter.format(date));
+
+function printTokyoDate() {
+  if (matchPc.matches) {
+    var _options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      weekday: 'long',
+      timeZone: 'Asia/Tokyo'
+    };
+    var _formatter = new Intl.DateTimeFormat('en-US', _options);
+    var _date = new Date();
+    var curDate = _formatter.format(_date);
+    //console.log(formatter.format(date));
+
+    todaydate.innerHTML = curDate;
+  }
+}
+printTokyoDate();
+function printTokyoTime() {
+  if (matchPc.matches) {
+    var curTime = new Date().toLocaleString('en-US', {
+      timeZone: 'Asia/Tokyo',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hourCycle: 'h24'
+    });
+    todaytime.innerHTML = curTime;
+  }
+}
+printTokyoTime();
+
+// Media Query - Responsive for header
+window.onscroll = function () {
+  if (matchPc.matches) {
+    scrollFunction();
+  } else if (matchTablet.matches) {
+    scrollTabletFunction();
+  }
+};
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById('header').style.height = '70px';
+    document.getElementById('headerTitle').style.fontSize = '34px';
+    document.getElementById('headerTitle').style.height = '70px';
+    document.getElementById('dateTime').style.fontSize = "17px";
+    document.getElementById('dateTime').style.paddingBottom = "3%";
+    document.getElementById('headerNav').style.fontSize = "17px";
+    document.getElementById('headerNav').style.paddingBottom = "5%";
+  } else {
+    document.getElementById('header').style.height = '100px';
+    document.getElementById('headerTitle').style.fontSize = '50px';
+    document.getElementById('headerTitle').style.height = '100px';
+    document.getElementById('dateTime').style.justifyContent = 'flex-end';
+    document.getElementById('dateTime').style.alignItems = 'flex-start';
+    document.getElementById('dateTime').style.fontSize = "21px";
+    document.getElementById('dateTime').style.paddingBottom = "5%";
+    document.getElementById('headerNav').style.fontSize = "20px";
+    document.getElementById('headerNav').style.paddingBottom = "7%";
+  }
+}
+function scrollTabletFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById('header').style.height = '70px';
+    document.getElementById('headerTitle').style.fontSize = '30px';
+    document.getElementById('headerTitle').style.height = '70px';
+    document.getElementById('nav-toggle-btn').style.marginTop = '2%';
+  } else {
+    document.getElementById('header').style.height = '90px';
+    document.getElementById('headerTitle').style.fontSize = '35px';
+    document.getElementById('headerTitle').style.height = '90px';
+    document.getElementById('nav-toggle-btn').style.marginTop = '5%';
+  }
+}
+function styleDesktopFunction() {
+  if (matchPc.matches) {
+    document.getElementById('header').style.height = '100px';
+    document.getElementById('headerTitle').style.fontSize = '50px';
+    document.getElementById('headerTitle').style.height = '100px';
+    document.getElementById('dateTime').style.justifyContent = 'flex-end';
+    document.getElementById('dateTime').style.alignItems = 'flex-start';
+    document.getElementById('dateTime').style.fontSize = "21px";
+    document.getElementById('dateTime').style.paddingBottom = "5%";
+    document.getElementById('headerNav').style.fontSize = "20px";
+    document.getElementById('headerNav').style.paddingBottom = "7%";
+  }
+}
+styleDesktopFunction();
+function styleTabletFunction() {
+  if (matchTablet.matches) {
+    document.getElementById('header').style.height = '90px';
+    document.getElementById('headerTitle').style.fontSize = '35px';
+    document.getElementById('headerTitle').style.height = '90px';
+    document.getElementById('nav-toggle-btn').style.marginTop = '5%';
+  }
+}
+styleTabletFunction();
+function styleMobileFunction() {
+  if (matchMobile.matches) {
+    document.getElementById('header').style.height = '50px';
+    document.getElementById('header').style.width = '100vw';
+    document.getElementById('headerTitle').style.fontSize = '22px';
+    document.getElementById('headerTitle').style.height = '50px';
+  }
+}
+styleMobileFunction();
 },{"gsap":"node_modules/gsap/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -5614,7 +5738,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50247" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52180" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

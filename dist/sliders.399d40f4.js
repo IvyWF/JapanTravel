@@ -8963,6 +8963,30 @@ var amountToScroll = galleryWidth - window.innerWidth + 50;
 //console.log(amountToScroll);
 
 var imagesGallery = document.querySelectorAll('.gallery img');
+var imagesTitles = document.querySelectorAll('.gallery h2');
+imagesTitles.forEach(function (title) {
+  var tlTitles = _gsap.default.timeline({
+    scrollTrigger: {
+      trigger: "#sliderOne",
+      start: "top 30%",
+      end: "top 10%",
+      //pin: true,
+      scrub: true
+      //markers: true,
+    }
+  });
+
+  tlTitles.set(title, {
+    yPercent: 100,
+    opacity: 0
+  });
+  tlTitles.to(title, {
+    yPercent: 0,
+    opacity: 1,
+    duration: 3,
+    ease: "power1.out"
+  });
+});
 imagesGallery.forEach(function (image) {
   var tlGallery = _gsap.default.timeline({
     scrollTrigger: {
@@ -8977,7 +9001,8 @@ imagesGallery.forEach(function (image) {
 
   tlGallery.set(image, {
     yPercent: 100,
-    opacity: 0
+    opacity: 0,
+    borderRadius: 5
   });
   tlGallery.to(image, {
     yPercent: 0,
@@ -9028,13 +9053,12 @@ var amountToScrollTwo = galleryTwoWidth - window.innerWidth + 110;
 
 _gsap.default.set(galleryTwo, {
   xPercent: -65,
-  yPercent: 20,
-  scale: 0
+  yPercent: 20
 }); //, yPercent: 20, scale: 0
 
 _gsap.default.to(galleryTwo, {
   yPercent: 0,
-  scale: 1,
+  //scale: 1,
   //opacity: 1,
   duration: 1.5,
   ease: "power1.out",
@@ -9092,22 +9116,17 @@ function raf(time) {
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
+var matchPc = window.matchMedia("(min-width: 993px)");
+function pcHoverEffect() {}
 var canvas = document.querySelector('.canvas2');
 var ctx = canvas.getContext('2d');
 var links = _toConsumableArray(document.querySelectorAll('.galleryThree h2'));
-
-// console.log(canvas);
-// console.log(links);
-
 function lerp(start, end, t) {
   return start * (1 - t) + end * t;
 }
 var imgIndex = 0;
 // Load images into an array for reference
 var images = [_.default, _2.default, _3.default, _4.default, _5.default, _6.default];
-
-//console.log(images)
-
 var imageArr = [];
 
 // Canvas mousemove variables
@@ -9116,19 +9135,21 @@ var targetY = 0;
 var currentX = 0;
 var currentY = 0;
 window.addEventListener('mousemove', function (e) {
-  targetX = e.clientX;
-  targetY = e.clientY;
-  //console.log(targetX, targetY);
+  if (matchPc.matches) {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    //console.log(targetX, targetY);
+  }
 });
 
 images.forEach(function (image, idx) {
-  var elImage = new Image(700);
-  elImage.src = image;
-  //console.log(elImage.src)
-
-  elImage.classList.add('project-image');
-  document.body.append(elImage);
-  imageArr.push(elImage);
+  if (matchPc.matches) {
+    var elImage = new Image(700);
+    elImage.src = image;
+    elImage.classList.add('project-image');
+    document.body.append(elImage);
+    imageArr.push(elImage);
+  }
 });
 
 // Draw images to the canvas
@@ -9136,115 +9157,91 @@ images.forEach(function (image, idx) {
 var percent = 0;
 var target = 0;
 function drawImage(idx) {
-  var _imageArr$idx$getBoun = imageArr[idx].getBoundingClientRect(),
-    width = _imageArr$idx$getBoun.width,
-    height = _imageArr$idx$getBoun.height;
-  canvas.width = width / 2 * window.devicePixelRatio;
-  canvas.height = height / 2 * window.devicePixelRatio;
-  canvas.style.width = "".concat(width, "px");
-  canvas.style.height = "".concat(height, "px");
+  if (matchPc.matches) {
+    var _imageArr$idx$getBoun = imageArr[idx].getBoundingClientRect(),
+      width = _imageArr$idx$getBoun.width,
+      height = _imageArr$idx$getBoun.height;
+    canvas.width = width / 2 * window.devicePixelRatio;
+    canvas.height = height / 2 * window.devicePixelRatio;
+    canvas.style.width = "".concat(width, "px");
+    canvas.style.height = "".concat(height, "px");
 
-  // pixelate by diabling the smoothing
-  ctx.webkitImageSmoothingEnabled = false;
-  ctx.mozImageSmoothingEnabled = false;
-  ctx.msSmoothingEnabled = false;
-  ctx.imageSmoothingEnabled = false;
-  if (target === 1) {
-    // 2 speeds to make the effect more gradual
-    if (percent < 0.2) {
-      percent += .01;
-    } else if (percent < 1) {
-      percent += .1;
+    // pixelate by diabling the smoothing
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.msSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
+    if (target === 1) {
+      // 2 speeds to make the effect more gradual
+      if (percent < 0.2) {
+        percent += .01;
+      } else if (percent < 1) {
+        percent += .1;
+      }
+    } else if (target === 0) {
+      if (percent > 0.2) {
+        percent -= .3;
+      } else if (percent > 0) {
+        percent -= .01;
+      }
     }
-  } else if (target === 0) {
-    if (percent > 0.2) {
-      percent -= .3;
-    } else if (percent > 0) {
-      percent -= .01;
-    }
-  }
-  var scaledWidth = width * percent;
-  var scaledHeight = height * percent;
-  if (percent >= 1) {
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    ctx.drawImage(imageArr[idx], 0, 0, width, height);
-  } else {
-    ctx.drawImage(imageArr[idx], 0, 0, scaledWidth, scaledHeight);
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    if (canvas.width !== 0 && canvas.height !== 0) {
-      ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, width, height);
+    var scaledWidth = width * percent;
+    var scaledHeight = height * percent;
+    if (percent >= 1) {
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      ctx.drawImage(imageArr[idx], 0, 0, width, height);
+    } else {
+      ctx.drawImage(imageArr[idx], 0, 0, scaledWidth, scaledHeight);
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      if (canvas.width !== 0 && canvas.height !== 0) {
+        ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, width, height);
+      }
     }
   }
 }
 var _loop = function _loop(i) {
-  links[i].addEventListener('mouseover', function () {
-    for (var j = 0; j < links.length; j++) {
-      if (j !== i) {
-        links[j].style.opacity = 0.2;
-        links[j].style.zIndex = 0;
-      } else {
-        links[j].style.opacity = 1;
-        links[j].style.zIndex = 3;
+  if (matchPc.matches) {
+    links[i].addEventListener('mouseover', function () {
+      for (var j = 0; j < links.length; j++) {
+        if (j !== i) {
+          links[j].style.opacity = 0.2;
+          links[j].style.zIndex = 0;
+        } else {
+          links[j].style.opacity = 1;
+          links[j].style.zIndex = 3;
+        }
       }
-    }
-  });
-  links[i].addEventListener('mouseleave', function () {
-    for (var _i = 0; _i < links.length; _i++) {
-      links[_i].style.opacity = 1;
-    }
-  });
-  links[i].addEventListener('mouseenter', function () {
-    imgIndex = i;
-    target = 1;
-  });
-  links[i].addEventListener('mouseleave', function () {
-    target = 0;
-  });
+    });
+    links[i].addEventListener('mouseleave', function () {
+      for (var _i = 0; _i < links.length; _i++) {
+        links[_i].style.opacity = 1;
+      }
+    });
+    links[i].addEventListener('mouseenter', function () {
+      imgIndex = i;
+      target = 1;
+    });
+    links[i].addEventListener('mouseleave', function () {
+      target = 0;
+    });
+  }
 };
 for (var i = 0; i < links.length; i++) {
   _loop(i);
 }
 function animate() {
-  currentX = lerp(currentX, targetX, 0.075);
-  currentY = lerp(currentY, targetY, 0.075);
-  var _imageArr$imgIndex$ge = imageArr[imgIndex].getBoundingClientRect(),
-    width = _imageArr$imgIndex$ge.width,
-    height = _imageArr$imgIndex$ge.height;
-  canvas.style.transform = "translate3d(".concat(currentX - width / 2, "px, ").concat(currentY - height * 2, "px, 0)");
-  drawImage(imgIndex);
-  window.requestAnimationFrame(animate);
+  if (matchPc.matches) {
+    currentX = lerp(currentX, targetX, 0.075);
+    currentY = lerp(currentY, targetY, 0.075);
+    var _imageArr$imgIndex$ge = imageArr[imgIndex].getBoundingClientRect(),
+      width = _imageArr$imgIndex$ge.width,
+      height = _imageArr$imgIndex$ge.height;
+    canvas.style.transform = "translate3d(".concat(currentX - width / 2, "px, ").concat(currentY - height * 2, "px, 0)");
+    drawImage(imgIndex);
+    window.requestAnimationFrame(animate);
+  }
 }
 animate();
-
-// Text-Reveal 2nd Slider
-
-document.querySelectorAll('.item3').forEach(function (item) {
-  item.addEventListener("mouseenter", function () {
-    _gsap.default.set(this.querySelectorAll(".shape span"), {
-      opacity: 0
-    });
-    _gsap.default.to(this.querySelectorAll(".shape span"), {
-      opacity: 1,
-      duration: 0.075,
-      stagger: {
-        from: "random",
-        each: 0.02
-      },
-      ease: "power2.out"
-    });
-  });
-  item.addEventListener("mouseleave", function () {
-    _gsap.default.to(this.querySelectorAll(".shape span"), {
-      opacity: 0,
-      duration: 0.075,
-      stagger: {
-        from: "random",
-        each: 0.02
-      },
-      ease: "power2.in"
-    });
-  });
-});
 },{"gsap":"node_modules/gsap/index.js","gsap/ScrollTrigger":"node_modules/gsap/ScrollTrigger.js","@studio-freight/lenis":"node_modules/@studio-freight/lenis/dist/lenis.mjs","../images/osaka/1.jpg":"images/osaka/1.jpg","../images/osaka/2.jpg":"images/osaka/2.jpg","../images/osaka/3.jpg":"images/osaka/3.jpg","../images/osaka/4.jpg":"images/osaka/4.jpg","../images/osaka/5.jpg":"images/osaka/5.jpg","../images/osaka/6.jpg":"images/osaka/6.jpg"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -9270,7 +9267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50247" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52180" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/69285b19fa.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <title>JapanTravel</title>
+</head>
+
+<body id="ohayo-body">
+
+    <div class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+
+        <div class="loader-wrap-heading">
+            <span class="loader-span">
+                <h1>Loading</h1>
+            </span>
+        </div>
+    </div>
+
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="60" width="60">
+                <circle cx="30" cy="30" r="27" stroke-width="2"></circle>
+            </svg>
+        </div>
+
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="2" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <header id="header"> <!--header-container-->
+            <div id="header-container">
+                <h1 id="headerTitle">
+                    <span class="letter">t </span>
+                    <span class="letter letterPink">o </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter">y </span>
+                    <span class="letter">o</span>
+                </h1>
+
+
+                <div id="headerNav">
+                    <div class="headerNav__item">
+                        <a href="ohayo.html" class="hoverable">
+                            <span class="navText">Ohayô</span>
+                        </a>
+                    </div>
+                    <div class="headerNav__item">
+                        <a href="#" class="hoverable">
+                            <span class="navText">Konnichiwa</span>
+                        </a>
+                    </div>
+                    <div class="headerNav__item">
+                        <a href="#" class="hoverable">
+                            <span class="navText">Konbanwa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="dateTime">
+                    <div id="date"></div>
+                    <div id="time"></div>
+                </div>
+
+                <div id="japanese">
+                    もちろんです！東京は素晴らしい場所ですねです。<br>
+                    また、新宿や渋谷の明るいネオン街も魅力的です。<br>
+                    そして、季節ごとに変わる桜や紅葉などの自然も。<br>
+                    東京は本当に多様性に富んだ素晴らしい場所です。
+                </div>
+
+                <button class="toggle-btn" id="nav-toggle-btn">
+                    <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+                        <path d="M10,2 L2,2" class="bar-1"></path>
+                        <path d="M2,5 L10,5" class="bar-2"></path>
+                        <path d="M10,8 L2,8" class="bar-3"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </header>
+
+        <div id="navContainer"> <!-- container -->
+            <div class="container-inner">
+                <div class="nav-bg">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav>
+                    <ul class="nav-container">
+                        <li><a href="#">Ohayô</a></li>
+                        <li><a href="#">Konnichiwa</a></li>
+                        <li><a href="#">Konbanwa</a></li>
+                    </ul>
+                </nav>
+
+                <div class="contact-container">
+                    <ul class="contactInfos">
+                        <li>Email: hfueizhhu@gmail.com</li>
+                        <li><a href="#">My GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <div class="hero">
+                <div class="main">
+                    <div class="ul ulOne" id="removeSmallParent">
+                        <a href="#" class="li hoverable one">
+                            <span class="letterPink">O</span>hayô
+                        </a>
+
+                        <div id="removeSmallOne">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4" />
+                            </svg>
+                        </div>
+
+
+                        <a href="#" class="li hoverable">
+                            <span class="letterPink">K</span>onbanwa
+                        </a>
+
+
+                        <div id="removeSmallTwo">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4" />
+                            </svg>
+                        </div>
+
+                        <a href="#" class="li hoverable">
+                            <span class="letterPink">K</span>onnichiwa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mouse_scroll">
+
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div>
+                        <span class="m_scroll_arrows unu"></span>
+                        <span class="m_scroll_arrows doi"></span>
+                        <span class="m_scroll_arrows trei"></span>
+                    </div>
+                </div>
+
+                <!-- <div class="explore">
+                    <p class="explore__title">Explore</p>
+                    <div class="line">
+                        <svg height="50" width="500">
+                            <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(255,255,255);stroke-width:2" />
+                        </svg>
+                    </div>
+                    <a href="#slider-inner1" class="hoverable">
+                        <i class="fa-solid fa-plus plusIcon"></i>
+                    </a>
+                </div> -->
+            </div>
+
+            <div class="gallery-wrapper" id="sliderOne">
+                <div class="gallery galleryPopupOne" id="slider-inner1">
+                    <div class="item">
+                        <h2 id="one">Morning///001</h2>
+                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                    </div>
+                    <div class="item">
+                        <h2 id="two">Morning///002</h2>
+                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                    </div>
+                    <div class="item">
+                        <h2 id="three">Morning///003</h2>
+                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                    </div>
+                    <div class="item">
+                        <h2 id="four">Morning///004</h2>
+                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                    </div>
+                    <div class="item">
+                        <h2 id="five">Morning///005</h2>
+                        <img src="images/osaka/5.jpg" alt="Morning///005">
+                    </div>
+                    <div class="item">
+                        <h2 id="six">Morning///006</h2>
+                        <img src="images/osaka/6.jpg" alt="Morning///006">
+                    </div>
+                </div>
+            </div>
+
+            <div class="separation ">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper-Two" id="sliderTwo">
+                <div class="galleryTwo galleryPopupTwo" id="slider-inner2">
+                    <div class="item item3">
+                        <h2>Morning///001</h2>
+                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///002</h2>
+                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///003</h2>
+                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                    </div>
+
+                    <div class="item item3">
+                        <h2>Morning///004</h2>
+                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                    </div>
+                </div>
+            </div>
+
+            <div class="separation separationTwo">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper-Three" id="sliderThree">
+
+                <div class="galleryThree" id="slider-inner3">
+                    <div class="item">
+                        <h2 data-original="images/osaka/1.jpg">Tokyo///001
+                        </h2>
+
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/osaka/2.jpg">Tokyo///002</h2>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/osaka/3.jpg">Tokyo///003</h2>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/osaka/4.jpg">Tokyo///004</h2>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/osaka/5.jpg">Tokyo///005</h2>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/osaka/6.jpg">Tokyo///006</h2>
+                    </div>
+                </div>
+                <canvas class="canvas2"></canvas>
+                <div class="modal">
+                    <img src="" alt="" class="full-img">
+                    <p class="caption">Tokyo///001</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer>
+
+            <!-- <div class="social-media">
+                <i class="fa-brands fa-instagram icon-3d"></i>
+                <i class="fa-brands fa-facebook-f icon-3d"></i>
+                <i class="fa-brands fa-pinterest-p icon-3d"></i>
+            </div> -->
+
+            <div class="info">
+                <!-- <h3>Contact me</h3> -->
+                <p>Email: hdueizhfur@gmail.com</p>
+                <p>Github</p>
+                <p>Tel: 6781647386</p>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- <script src="scripts/preload.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/fullscreenMenu.js"></script>
+    <script src="scripts/descriptionAnim.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="scripts/sliders.js"></script>
+    <script src="scripts/gallery.js"></script>
+</body>
+
+</html>

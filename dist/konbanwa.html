@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style.78032849.css">
     <script src="https://kit.fontawesome.com/69285b19fa.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <title>JapanTravel</title>
@@ -40,15 +40,41 @@
 
     <div class="container">
 
-        <header>
-            <h1 class="osakaTitle">
-                <span class="letter">t</span>
-                <span class="letter letterPink">o</span>
-                <span class="letter letterPink">k</span>
-                <span class="letter letterPink">k</span>
-                <span class="letter">y</span>
+        <header id="header">
+            <h1 id="headerTitle">
+                <span class="letter">t </span>
+                <span class="letter letterPink">o </span>
+                <span class="letter letterPink">k </span>
+                <span class="letter letterPink">k </span>
+                <span class="letter">y </span>
                 <span class="letter">o</span>
             </h1>
+
+
+            <div class="headerNav">
+                <div class="headerNav__item">
+                    <a href="#" class="hoverable">Ohayô</a>
+                </div>
+                <div class="headerNav__item">
+                    <a href="#" class="hoverable">Konnichiwa</a>
+                </div>
+                <div class="headerNav__item">
+                    <a href="#" class="hoverable">Konbanwa</a>
+                </div>
+            </div>
+
+            <div class="dateTime"> <!--Moment Timezone-->
+                <!-- <div class="date"></div>
+                <div class="day"></div>
+                <div class="time"></div> -->
+            </div>
+
+            <div class="japanese">
+                もちろんです！東京は素晴らしい場所ですねです。<br>
+                また、新宿や渋谷の明るいネオン街も魅力的です。<br>
+                そして、季節ごとに変わる桜や紅葉などの自然も。<br>
+                東京は本当に多様性に富んだ素晴らしい場所です。
+            </div>
 
             <!-- <nav class="pagesNav">
                 <div class="pagesNav__items">
@@ -101,7 +127,7 @@
                             <span class="letterPink">O</span>hayô
                         </a>
                         <svg height="100" width="50">
-                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4" />
+                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4"></line>
                         </svg>
 
                         <a href="#" class="li hoverable">
@@ -109,7 +135,7 @@
                         </a>
 
                         <svg height="100" width="50">
-                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4" />
+                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4"></line>
                         </svg>
 
                         <a href="#" class="li hoverable">
@@ -143,67 +169,153 @@
                 </div> -->
             </div>
 
-
             <div class="gallery-wrapper" id="sliderOne">
                 <div class="gallery galleryPopupOne" id="slider-inner1">
                     <div class="item">
                         <h2 id="one">Morning///001</h2>
-                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                        <img src="/1.20deb4b0.jpg" alt="Morning///001">
                     </div>
                     <div class="item">
                         <h2 id="two">Morning///002</h2>
-                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                        <img src="/2.a3a90409.jpg" alt="Morning///002">
                     </div>
                     <div class="item">
                         <h2 id="three">Morning///003</h2>
-                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                        <img src="/3.a7d98bb4.jpg" alt="Morning///003">
                     </div>
                     <div class="item">
                         <h2 id="four">Morning///004</h2>
-                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                        <img src="/4.7cf12fc2.jpg" alt="Morning///004">
                     </div>
                     <div class="item">
                         <h2 id="five">Morning///005</h2>
-                        <img src="images/osaka/5.jpg" alt="Morning///005">
+                        <img src="/5.534041c2.jpg" alt="Morning///005">
                     </div>
                     <div class="item">
                         <h2 id="six">Morning///006</h2>
-                        <img src="images/osaka/6.jpg" alt="Morning///006">
+                        <img src="/6.dfffe6ce.jpg" alt="Morning///006">
                     </div>
                 </div>
             </div>
 
+            <div class="separation ">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <!-- <span>東京</span> 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <!-- 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+                    </div>
+                </div>
+            </div>
 
             <div class="gallery-wrapper-Two" id="sliderTwo">
                 <div class="galleryTwo galleryPopupTwo" id="slider-inner2">
                     <div class="item item3">
                         <h2>Morning///001</h2>
-                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                        <img src="/1.20deb4b0.jpg" alt="Morning///001">
                     </div>
 
                     <div class="item item3">
                         <h2>Morning///002</h2>
-                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                        <img src="/2.a3a90409.jpg" alt="Morning///002">
                     </div>
 
                     <div class="item item3">
                         <h2>Morning///003</h2>
-                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                        <img src="/3.a7d98bb4.jpg" alt="Morning///003">
                     </div>
 
                     <div class="item item3">
                         <h2>Morning///004</h2>
-                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                        <img src="/4.7cf12fc2.jpg" alt="Morning///004">
                     </div>
                 </div>
             </div>
 
-            <section class="gallery-wrapper-Three" id="sliderThree">
+            <div class="separation separationTwo">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <!-- <span>東京</span> 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <!-- 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>
+                        <span>佐野</span>
+                        <span>富士見</span>
+                        <span>東京</span>
+                        <span>大阪</span>
+                        <span>京都</span>
+                        <span>奈良</span>&nbsp
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper-Three" id="sliderThree">
 
                 <div class="galleryThree" id="slider-inner3">
                     <div class="item">
                         <h2 data-original="images/osaka/1.jpg">Tokyo///001
-                            <img src="images/osaka/1.jpg" alt="">
+                            <img src="/1.20deb4b0.jpg" alt="">
                         </h2>
 
                     </div>
@@ -225,10 +337,10 @@
                 </div>
                 <canvas class="canvas2"></canvas>
                 <div class="modal">
-                    <img src="images/osaka/1.jpg" alt="" class="full-img">
+                    <img src="/1.20deb4b0.jpg" alt="" class="full-img">
                     <p class="caption">Tokyo///001</p>
                 </div>
-            </section>
+            </div>
 
         </div>
 
@@ -255,11 +367,11 @@
 
 
     <!-- <script src="scripts/preload.js"></script> -->
-    <script src="scripts/cursor.js"></script>
-    <script src="scripts/descriptionAnim.js"></script>
+    <script src="/cursor.ed5dce8c.js"></script>
+    <script src="/descriptionAnim.82c760c6.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-    <script src="scripts/sliders.js"></script>
-    <script src="scripts/gallery.js"></script>
+    <script src="/sliders.399d40f4.js"></script>
+    <script src="/gallery.61d82d0d.js"></script>
 </body>
 
 </html>

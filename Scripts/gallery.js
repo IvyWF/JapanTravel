@@ -332,3 +332,4 @@ imgOpened.addEventListener('click', (e) => {
         imgOpened.classList.remove('open');
     }
 });
+

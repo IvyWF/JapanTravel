@@ -1,7 +1,10 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
+@import "./pages/allpages";
 @import "./pages/ohayo";
+@import "./pages/konnichiwa";
+@import "./pages/konbanwa";
 
 @import url('https://fonts.googleapis.com/css2?family=Chokokutai&display=swap');
 /* font-family: 'Chokokutai', cursive; */
@@ -77,79 +80,79 @@ body {
     //cursor: none;
 }
 
-.fullscreen {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+// .fullscreen {
+//     width: 100vw;
+//     height: 100vh;
+//     overflow: hidden;
+//     position: relative;
 
-    .homeTitle {
-        text-align: center;
-        margin-top: 25px;
-        /*font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;*/
-        font-size: 56px;
-        color: #212E53; // #F9968B
-    }
+//     .homeTitle {
+//         text-align: center;
+//         margin-top: 25px;
+//         /*font-family: 'mijuregular', serif, Arial, Helvetica, sans-serif;*/
+//         font-size: 56px;
+//         color: #212E53; // #F9968B
+//     }
 
-    .homeNav {
-        //menu on the left and in the middleof the page
-        /*margin-left: 40px;
-        position: absolute;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);*/
-        margin-top: 14%;
+//     .homeNav {
+//         //menu on the left and in the middleof the page
+//         /*margin-left: 40px;
+//         position: absolute;
+//         top: 50%;
+//         -ms-transform: translateY(-50%);
+//         transform: translateY(-50%);*/
+//         margin-top: 14%;
 
-        @include tablet-only {
-            margin-top: 46%;
-        }
+//         @include tablet-only {
+//             margin-top: 46%;
+//         }
 
-        @include mobile-only {
-            margin-top: 24%;
-        }
+//         @include mobile-only {
+//             margin-top: 24%;
+//         }
 
-        &__ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+//         &__ul {
+//             list-style-type: none;
+//             display: flex;
+//             justify-content: space-evenly;
+//             align-items: center;
 
-            @include mobile-only {
-                display: flex;
-                flex-direction: column;
-            }
+//             @include mobile-only {
+//                 display: flex;
+//                 flex-direction: column;
+//             }
 
-            li {
-                margin-top: 20px;
-                font-size: 50px;
-                font-family: 'Pacifico', cursive;
-                letter-spacing: 5px;
+//             li {
+//                 margin-top: 20px;
+//                 font-size: 50px;
+//                 font-family: 'Pacifico', cursive;
+//                 letter-spacing: 5px;
 
-                @include mobile-only {
-                    font-size: 36px;
-                }
+//                 @include mobile-only {
+//                     font-size: 36px;
+//                 }
 
-                a {
-                    text-decoration: none;
-                    color: #212E53;
-                    transition: 0.3s;
+//                 a {
+//                     text-decoration: none;
+//                     color: #212E53;
+//                     transition: 0.3s;
 
-                    &:hover {
-                        cursor: pointer;
-                        color: #fff;
-                        text-shadow: 0 0 5px #03e9f4,
-                            0 0 25px #03e9f4,
-                            0 0 50px #03e9f4,
-                            0 0 100px #03e9f4;
-                    }
-                }
-            }
+//                     &:hover {
+//                         cursor: pointer;
+//                         color: #fff;
+//                         text-shadow: 0 0 5px #03e9f4,
+//                             0 0 25px #03e9f4,
+//                             0 0 50px #03e9f4,
+//                             0 0 100px #03e9f4;
+//                     }
+//                 }
+//             }
 
 
-        }
+//         }
 
-    }
-}
+//     }
+// }
 
 //Social media icons
 //     .social-media {
@@ -231,33 +234,33 @@ body {
 //     }
 // }
 
-.fullscreen .video-background {
-    position: absolute;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    filter: blur(7px);
+// .fullscreen .video-background {
+//     position: absolute;
+//     width: auto;
+//     height: auto;
+//     min-width: 100%;
+//     min-height: 100%;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     z-index: -1;
+//     filter: blur(7px);
 
 
-    @media (min-aspect-ratio: 16/9) {
-        .video-background {
-            width: 100%;
-            height: auto;
-        }
-    }
+//     @media (min-aspect-ratio: 16/9) {
+//         .video-background {
+//             width: 100%;
+//             height: auto;
+//         }
+//     }
 
-    @media (max-aspect-ratio: 16/9) {
-        .video-background {
-            width: auto;
-            height: 100%;
-        }
-    }
-}
+//     @media (max-aspect-ratio: 16/9) {
+//         .video-background {
+//             width: auto;
+//             height: 100%;
+//         }
+//     }
+// }
 
 
 //Osaka Page

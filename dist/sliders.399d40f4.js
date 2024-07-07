@@ -8878,30 +8878,30 @@ var n = /*#__PURE__*/function () {
     }]), t;
   }();
 exports.default = h;
-},{}],"images/osaka/1.jpg":[function(require,module,exports) {
-module.exports = "/1.20deb4b0.jpg";
-},{}],"images/osaka/2.jpg":[function(require,module,exports) {
-module.exports = "/2.a3a90409.jpg";
-},{}],"images/osaka/3.jpg":[function(require,module,exports) {
-module.exports = "/3.a7d98bb4.jpg";
-},{}],"images/osaka/4.jpg":[function(require,module,exports) {
-module.exports = "/4.7cf12fc2.jpg";
-},{}],"images/osaka/5.jpg":[function(require,module,exports) {
-module.exports = "/5.534041c2.jpg";
-},{}],"images/osaka/6.jpg":[function(require,module,exports) {
-module.exports = "/6.dfffe6ce.jpg";
+},{}],"images/ohayo/slider3/1.png":[function(require,module,exports) {
+module.exports = "/1.b409ccfc.png";
+},{}],"images/ohayo/slider3/2.png":[function(require,module,exports) {
+module.exports = "/2.04f171d7.png";
+},{}],"images/ohayo/slider3/3.png":[function(require,module,exports) {
+module.exports = "/3.59ffc78b.png";
+},{}],"images/ohayo/slider3/4.png":[function(require,module,exports) {
+module.exports = "/4.3f12d3cd.png";
+},{}],"images/ohayo/slider3/5.png":[function(require,module,exports) {
+module.exports = "/5.11782672.png";
+},{}],"images/ohayo/slider3/6.png":[function(require,module,exports) {
+module.exports = "/6.fa21020e.png";
 },{}],"scripts/sliders.js":[function(require,module,exports) {
 "use strict";
 
 var _gsap = _interopRequireDefault(require("gsap"));
 var _ScrollTrigger = require("gsap/ScrollTrigger");
 var _lenis = _interopRequireDefault(require("@studio-freight/lenis"));
-var _ = _interopRequireDefault(require("../images/osaka/1.jpg"));
-var _2 = _interopRequireDefault(require("../images/osaka/2.jpg"));
-var _3 = _interopRequireDefault(require("../images/osaka/3.jpg"));
-var _4 = _interopRequireDefault(require("../images/osaka/4.jpg"));
-var _5 = _interopRequireDefault(require("../images/osaka/5.jpg"));
-var _6 = _interopRequireDefault(require("../images/osaka/6.jpg"));
+var _ = _interopRequireDefault(require("../images/ohayo/slider3/1.png"));
+var _2 = _interopRequireDefault(require("../images/ohayo/slider3/2.png"));
+var _3 = _interopRequireDefault(require("../images/ohayo/slider3/3.png"));
+var _4 = _interopRequireDefault(require("../images/ohayo/slider3/4.png"));
+var _5 = _interopRequireDefault(require("../images/ohayo/slider3/5.png"));
+var _6 = _interopRequireDefault(require("../images/ohayo/slider3/6.png"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8956,157 +8956,193 @@ var gallery = document.querySelector(".gallery");
 
 //Get the gallery total width
 var galleryWidth = gallery.offsetWidth;
-//console.log(galleryWidth);
 
 //Get the amount to scroll horizontally by subtracting the window width from the full width of the gallery
 var amountToScroll = galleryWidth - window.innerWidth + 50;
-//console.log(amountToScroll);
-
-var imagesGallery = document.querySelectorAll('.gallery img');
-var imagesTitles = document.querySelectorAll('.gallery h2');
-imagesTitles.forEach(function (title) {
-  var tlTitles = _gsap.default.timeline({
+console.log(amountToScroll);
+var mm = _gsap.default.matchMedia();
+mm.add("(min-width: 993px)", function () {
+  _gsap.default.to(gallery, {
+    x: -amountToScroll,
+    ease: "none",
     scrollTrigger: {
       trigger: "#sliderOne",
-      start: "top 30%",
-      end: "top 10%",
-      //pin: true,
+      start: "top top",
+      end: "+=" + amountToScroll,
+      pin: true,
+      scrub: true,
+      //markers: true,
+
+      onUpdate: function onUpdate(self) {
+        var skewAmount = self.getVelocity() / 200;
+        _gsap.default.to(gallery, {
+          skewX: skewAmount,
+          //overwrite: true,
+          ease: "power1.out"
+        });
+      },
+      onScrubComplete: function onScrubComplete() {
+        _gsap.default.to(gallery, {
+          skewX: 0,
+          duration: 0.2,
+          ease: "power1.out"
+        });
+      }
+    }
+  });
+});
+mm.add("(min-width: 768px) and (max-width: 992px)", function () {
+  _gsap.default.to(gallery, {
+    x: -amountToScroll,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#sliderOne",
+      start: "top top",
+      end: "+=" + amountToScroll,
+      pin: true,
+      scrub: true,
+      //markers: true,
+
+      onUpdate: function onUpdate(self) {
+        var skewAmount = self.getVelocity() / 200;
+        _gsap.default.to(gallery, {
+          skewX: skewAmount,
+          //overwrite: true,
+          ease: "power1.out"
+        });
+      },
+      onScrubComplete: function onScrubComplete() {
+        _gsap.default.to(gallery, {
+          skewX: 0,
+          duration: 0.2,
+          ease: "power1.out"
+        });
+      }
+    }
+  });
+});
+
+// Mobile version
+var amountToScrollMobile = galleryWidth - 320;
+console.log(amountToScrollMobile);
+mm.add("(max-width: 767px)", function () {
+  _gsap.default.to(gallery, {
+    x: -amountToScrollMobile,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#sliderOne",
+      start: "top top",
+      end: "+=" + amountToScrollMobile,
+      pin: true,
       scrub: true
       //markers: true,
     }
   });
-
-  tlTitles.set(title, {
-    yPercent: 100,
-    opacity: 0
-  });
-  tlTitles.to(title, {
-    yPercent: 0,
-    opacity: 1,
-    duration: 3,
-    ease: "power1.out"
-  });
-});
-imagesGallery.forEach(function (image) {
-  var tlGallery = _gsap.default.timeline({
-    scrollTrigger: {
-      trigger: "#sliderOne",
-      start: "top 30%",
-      end: "top 10%",
-      //pin: true,
-      scrub: true
-      //markers: true,
-    }
-  });
-
-  tlGallery.set(image, {
-    yPercent: 100,
-    opacity: 0,
-    borderRadius: 5
-  });
-  tlGallery.to(image, {
-    yPercent: 0,
-    opacity: 1,
-    duration: 3,
-    ease: "power1.out"
-  });
-});
-_gsap.default.to(gallery, {
-  x: -amountToScroll,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "#sliderOne",
-    start: "top top",
-    end: "+=" + amountToScroll,
-    pin: true,
-    scrub: true,
-    //markers: true,
-
-    onUpdate: function onUpdate(self) {
-      var skewAmount = self.getVelocity() / 200;
-      _gsap.default.to(gallery, {
-        skewX: skewAmount,
-        //overwrite: true,
-        ease: "power1.out"
-      });
-    },
-    onScrubComplete: function onScrubComplete() {
-      _gsap.default.to(gallery, {
-        skewX: 0,
-        duration: 0.2,
-        ease: "power1.out"
-      });
-    }
-  }
 });
 
 // 2nd Slider Scroll
 
 var galleryTwo = document.querySelector(".galleryTwo");
-//console.log(galleryTwo)
-
 var galleryTwoWidth = galleryTwo.offsetWidth;
-//console.log(galleryTwoWidth);
-
 var amountToScrollTwo = galleryTwoWidth - window.innerWidth + 110;
-//console.log(amountToScrollTwo);
+var mmTwo = _gsap.default.matchMedia();
+mmTwo.add("(min-width: 993px)", function () {
+  _gsap.default.set(galleryTwo, {
+    xPercent: -65,
+    yPercent: 30
+  });
+  _gsap.default.to(galleryTwo, {
+    yPercent: 0,
+    duration: 1.5,
+    ease: "power1.out",
+    //immediateRender: false, // otherwise scrollTrigger will force the render right away and the starting values that get locked in would be affected by the from() above
+    scrollTrigger: {
+      trigger: ".gallery-wrapper-Two",
+      start: "top center",
+      end: "top top",
+      scrub: true
+      //markers: true
+    }
+  });
 
-_gsap.default.set(galleryTwo, {
-  xPercent: -65,
-  yPercent: 20
-}); //, yPercent: 20, scale: 0
-
-_gsap.default.to(galleryTwo, {
-  yPercent: 0,
-  //scale: 1,
-  //opacity: 1,
-  duration: 1.5,
-  ease: "power1.out",
-  //immediateRender: false, // otherwise scrollTrigger will force the render right away and the starting values that get locked in would be affected by the from() above
-  scrollTrigger: {
-    trigger: ".gallery-wrapper-Two",
-    start: "top center",
-    end: "top top",
-    scrub: true
-    //markers: true
-  }
+  _gsap.default.to(galleryTwo, {
+    x: amountToScrollTwo,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".gallery-wrapper-Two",
+      start: "top top",
+      end: "+=" + amountToScrollTwo,
+      pin: true,
+      scrub: true //Set animation progress to scroll position
+    }
+  });
 });
 
-_gsap.default.to(galleryTwo, {
-  x: amountToScrollTwo,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".gallery-wrapper-Two",
-    start: "top top",
-    end: "+=" + amountToScrollTwo,
-    pin: true,
-    scrub: true //Set animation progress to scroll position
-  }
+mmTwo.add("(min-width: 768px) and (max-width: 992px)", function () {
+  _gsap.default.set(galleryTwo, {
+    xPercent: -65,
+    yPercent: 30
+  });
+  _gsap.default.to(galleryTwo, {
+    yPercent: 0,
+    duration: 1.5,
+    ease: "power1.out",
+    //immediateRender: false, // otherwise scrollTrigger will force the render right away and the starting values that get locked in would be affected by the from() above
+    scrollTrigger: {
+      trigger: ".gallery-wrapper-Two",
+      start: "top center",
+      end: "top top",
+      scrub: true
+      //markers: true
+    }
+  });
+
+  _gsap.default.to(galleryTwo, {
+    x: amountToScrollTwo,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".gallery-wrapper-Two",
+      start: "top top",
+      end: "+=" + amountToScrollTwo,
+      pin: true,
+      scrub: true //Set animation progress to scroll position
+    }
+  });
 });
 
 // 3rd Slider Scroll
 var galleryThree = document.querySelector(".galleryThree");
-_gsap.default.set(galleryThree, {
-  xPercent: 68,
-  yPercent: 20,
-  scale: 0,
-  opacity: 0
+var mmThree = _gsap.default.matchMedia();
+mmThree.add("(min-width: 993px)", function () {
+  _gsap.default.set(galleryThree, {
+    xPercent: 68,
+    yPercent: 20,
+    opacity: 0,
+    scale: 0
+  }); //opacity: 0, scale: 0 
+  _gsap.default.to(galleryThree, {
+    xPercent: 0,
+    yPercent: 0,
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    ease: "power1.out",
+    //immediateRender: false, // otherwise scrollTrigger will force the render right away and the starting values that get locked in would be affected by the from() above
+    scrollTrigger: {
+      trigger: ".gallery-wrapper-Three",
+      start: "top center",
+      end: "top top",
+      scrub: true
+      //markers: true
+    }
+  });
 });
-_gsap.default.to(galleryThree, {
-  xPercent: 0,
-  yPercent: 0,
-  scale: 1,
-  opacity: 1,
-  duration: 1,
-  ease: "power1.out",
-  //immediateRender: false, // otherwise scrollTrigger will force the render right away and the starting values that get locked in would be affected by the from() above
-  scrollTrigger: {
-    trigger: ".gallery-wrapper-Three",
-    start: "top center",
-    end: "top top",
-    scrub: true
-    //markers: true
-  }
+
+mmThree.add("max-width: 767px", function () {
+  _gsap.default.set(galleryThree, {
+    xPercent: 0,
+    yPercent: 0
+  });
 });
 
 //Initialize Lenis smooth scrolling
@@ -9117,7 +9153,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 var matchPc = window.matchMedia("(min-width: 993px)");
-function pcHoverEffect() {}
+
+//function pcHoverEffect() {}
+
 var canvas = document.querySelector('.canvas2');
 var ctx = canvas.getContext('2d');
 var links = _toConsumableArray(document.querySelectorAll('.galleryThree h2'));
@@ -9144,10 +9182,11 @@ window.addEventListener('mousemove', function (e) {
 
 images.forEach(function (image, idx) {
   if (matchPc.matches) {
-    var elImage = new Image(700);
+    var elImage = new Image(700, 450);
     elImage.src = image;
     elImage.classList.add('project-image');
     document.body.append(elImage);
+    elImage.style.cssText = "object-fit: cover;";
     imageArr.push(elImage);
   }
 });
@@ -9158,11 +9197,14 @@ var percent = 0;
 var target = 0;
 function drawImage(idx) {
   if (matchPc.matches) {
-    var _imageArr$idx$getBoun = imageArr[idx].getBoundingClientRect(),
-      width = _imageArr$idx$getBoun.width,
-      height = _imageArr$idx$getBoun.height;
-    canvas.width = width / 2 * window.devicePixelRatio;
-    canvas.height = height / 2 * window.devicePixelRatio;
+    var _imageArr$1$getBoundi = imageArr[1].getBoundingClientRect(),
+      width = _imageArr$1$getBoundi.width,
+      height = _imageArr$1$getBoundi.height;
+    canvas.width = width;
+    //(width / 2) * window.devicePixelRatio;
+    console.log(canvas.width);
+    canvas.height = height;
+    //(height / 2) * window.devicePixelRatio;
     canvas.style.width = "".concat(width, "px");
     canvas.style.height = "".concat(height, "px");
 
@@ -9242,7 +9284,7 @@ function animate() {
   }
 }
 animate();
-},{"gsap":"node_modules/gsap/index.js","gsap/ScrollTrigger":"node_modules/gsap/ScrollTrigger.js","@studio-freight/lenis":"node_modules/@studio-freight/lenis/dist/lenis.mjs","../images/osaka/1.jpg":"images/osaka/1.jpg","../images/osaka/2.jpg":"images/osaka/2.jpg","../images/osaka/3.jpg":"images/osaka/3.jpg","../images/osaka/4.jpg":"images/osaka/4.jpg","../images/osaka/5.jpg":"images/osaka/5.jpg","../images/osaka/6.jpg":"images/osaka/6.jpg"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"gsap":"node_modules/gsap/index.js","gsap/ScrollTrigger":"node_modules/gsap/ScrollTrigger.js","@studio-freight/lenis":"node_modules/@studio-freight/lenis/dist/lenis.mjs","../images/ohayo/slider3/1.png":"images/ohayo/slider3/1.png","../images/ohayo/slider3/2.png":"images/ohayo/slider3/2.png","../images/ohayo/slider3/3.png":"images/ohayo/slider3/3.png","../images/ohayo/slider3/4.png":"images/ohayo/slider3/4.png","../images/ohayo/slider3/5.png":"images/ohayo/slider3/5.png","../images/ohayo/slider3/6.png":"images/ohayo/slider3/6.png"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -9267,7 +9309,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52180" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59295" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

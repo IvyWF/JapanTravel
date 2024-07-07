@@ -117,9 +117,9 @@ window.onscroll = function () {
 
 function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById('header').style.height = '70px';
+        document.getElementById('header').style.height = '80px';
         document.getElementById('headerTitle').style.fontSize = '34px';
-        document.getElementById('headerTitle').style.height = '70px';
+        document.getElementById('headerTitle').style.height = '80px';
         document.getElementById('dateTime').style.fontSize = "17px";
         document.getElementById('dateTime').style.paddingBottom = "3%";
         document.getElementById('headerNav').style.fontSize = "17px";
@@ -127,11 +127,11 @@ function scrollFunction() {
 
     } else {
         document.getElementById('header').style.height = '100px';
-        document.getElementById('headerTitle').style.fontSize = '50px';
+        document.getElementById('headerTitle').style.fontSize = '36px';
         document.getElementById('headerTitle').style.height = '100px';
         document.getElementById('dateTime').style.justifyContent = 'flex-end';
         document.getElementById('dateTime').style.alignItems = 'flex-start';
-        document.getElementById('dateTime').style.fontSize = "21px";
+        document.getElementById('dateTime').style.fontSize = "19px";
         document.getElementById('dateTime').style.paddingBottom = "5%"; document.getElementById('headerNav').style.fontSize = "20px";
         document.getElementById('headerNav').style.paddingBottom = "7%";
     }
@@ -155,11 +155,11 @@ function styleDesktopFunction() {
 
     if (matchPc.matches) {
         document.getElementById('header').style.height = '100px';
-        document.getElementById('headerTitle').style.fontSize = '50px';
+        document.getElementById('headerTitle').style.fontSize = '34px';
         document.getElementById('headerTitle').style.height = '100px';
         document.getElementById('dateTime').style.justifyContent = 'flex-end';
         document.getElementById('dateTime').style.alignItems = 'flex-start';
-        document.getElementById('dateTime').style.fontSize = "21px";
+        document.getElementById('dateTime').style.fontSize = "19px";
         document.getElementById('dateTime').style.paddingBottom = "5%"; document.getElementById('headerNav').style.fontSize = "20px";
         document.getElementById('headerNav').style.paddingBottom = "7%";
     }

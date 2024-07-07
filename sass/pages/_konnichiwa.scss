@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+/* font-family: 'Amatic SC', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+/* font-family: 'Dela Gothic One', sans-serif; non utilisé*/
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+/* font-family: 'M PLUS Rounded 1c', sans-serif; */
+
+//Test police
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+/* font-family: 'Lemon', serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+/* font-family: 'Roboto Flex', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap'); //pour légende image
+/*font-family: 'Cutive Mono', monospace;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap'); // pour logo
+/* font-family: 'Ubuntu', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap'); // pour séparation
+/* font-family: 'Aoboshi One', serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+/* font-family: 'Stick', sans-serif; */
+
+.konniSliderOne-title {
+    //color: #f5f7fa;
+    font-family: 'Cutive Mono', monospace; //'Amatic SC', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 100px;
+    padding: 1% 0;
+    text-align: right;
+    margin-right: 42px;
+
+    @include tablet-only {
+        font-size: 26px;
+        margin-right: 13.6%;
+        padding: 1% 0;
+    }
+
+    @include mobile-only {
+        font-size: 16px;
+        margin-right: 6.5%;
+        padding: 1.2% 0;
+    }
+}
+
+
+.konniSliderTwo-title {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 100px;
+    padding: 1% 0;
+    margin-right: 4%;
+
+    @include tablet-only {
+        font-size: 24px;
+        padding: 1.5% 0;
+        margin-right: 18%;
+    }
+
+    @include mobile-only {
+        font-size: 11px;
+        margin-right: -7.5%;
+        padding: 2% 0;
+    }
+
+}

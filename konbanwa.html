@@ -10,7 +10,7 @@
     <title>JapanTravel</title>
 </head>
 
-<body id="osaka-body">
+<body id="ohayo-body">
 
     <div class="loader-wrap">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
@@ -38,108 +38,114 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="container">
 
-        <header id="header">
-            <h1 id="headerTitle">
-                <span class="letter">t </span>
-                <span class="letter letterPink">o </span>
-                <span class="letter letterPink">k </span>
-                <span class="letter letterPink">k </span>
-                <span class="letter">y </span>
-                <span class="letter">o</span>
-            </h1>
+        <header id="header"> <!--header-container-->
+            <div id="header-container">
+                <h1 id="headerTitle">
+                    <span class="letter">t </span>
+                    <span class="letter letterPink">o </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter">y </span>
+                    <span class="letter">o</span>
+                </h1>
 
 
-            <div class="headerNav">
-                <div class="headerNav__item">
-                    <a href="#" class="hoverable">Ohayô</a>
-                </div>
-                <div class="headerNav__item">
-                    <a href="#" class="hoverable">Konnichiwa</a>
-                </div>
-                <div class="headerNav__item">
-                    <a href="#" class="hoverable">Konbanwa</a>
-                </div>
-            </div>
-
-            <div class="dateTime"> <!--Moment Timezone-->
-                <!-- <div class="date"></div>
-                <div class="day"></div>
-                <div class="time"></div> -->
-            </div>
-
-            <div class="japanese">
-                もちろんです！東京は素晴らしい場所ですねです。<br>
-                また、新宿や渋谷の明るいネオン街も魅力的です。<br>
-                そして、季節ごとに変わる桜や紅葉などの自然も。<br>
-                東京は本当に多様性に富んだ素晴らしい場所です。
-            </div>
-
-            <!-- <nav class="pagesNav">
-                <div class="pagesNav__items">
-                    <div class="pagesNav__items--li">
-                        <a href="#" class="hoverable">
-                            <span class="letter letterPink">O</span>
-                            <span class="letter">h</span>
-                            <span class="letter">a</span>
-                            <span class="letter">y</span>
-                            <span class="letter">ô</span>
+                <div id="headerNav">
+                    <div class="headerNav__item">
+                        <a href="konnichiwa.html" class="hoverable">
+                            <span class="navText">Konnichiwa</span>
                         </a>
                     </div>
-                    <div class="pagesNav__items--li">
-                        <a href="#" class="hoverable">
-                            <span class="letter letterPink">K</span>
-                            <span class="letter">o</span>
-                            <span class="letter">n</span>
-                            <span class="letter">n</span>
-                            <span class="letter">i</span>
-                            <span class="letter">c</span>
-                            <span class="letter">h</span>
-                            <span class="letter">i</span>
-                            <span class="letter">w</span>
-                            <span class="letter">a</span>
+                    <div class="headerNav__item">
+                        <a href="ohayo.html" class="hoverable">
+                            <span class="navText">Ohayô</span>
                         </a>
                     </div>
-                    <div class="pagesNav__items--li">
-                        <a href="#" class="hoverable">
-                            <span class="letter letterPink">K</span>
-                            <span class="letter">o</span>
-                            <span class="letter">n</span>
-                            <span class="letter">b</span>
-                            <span class="letter">a</span>
-                            <span class="letter">n</span>
-                            <span class="letter">w</span>
-                            <span class="letter">a</span>
+                    <div class="headerNav__item">
+                        <a href="konbanwa.html" class="hoverable">
+                            <span class="navText">Konbanwa</span>
                         </a>
                     </div>
                 </div>
-            </nav> -->
+
+                <div id="dateTime">
+                    <div id="date"></div>
+                    <div id="time"></div>
+                </div>
+
+                <div id="japanese">
+                    東京タワーが夜空に光を放つ。<br>
+                    銀座の街は買い物天国です。<br>
+                    浅草寺で伝統文化を感じる。<br>
+                    新宿の夜は眠らない街だ。🇯🇵
+                </div>
+
+                <button class="toggle-btn" id="nav-toggle-btn">
+                    <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+                        <path d="M10,2 L2,2" class="bar-1"></path>
+                        <path d="M2,5 L10,5" class="bar-2"></path>
+                        <path d="M10,8 L2,8" class="bar-3"></path>
+                    </svg>
+                </button>
+
+            </div>
         </header>
 
+        <div id="navContainer"> <!-- container -->
+            <div class="container-inner">
+                <div class="nav-bg">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav>
+                    <ul class="nav-container">
+                        <li><a href="konnichiwa.html">Konnichiwa</a></li>
+                        <li><a href="ohayo.html">Ohayô</a></li>
+                        <li><a href="konbanwa.html">Konbanwa</a></li>
+                    </ul>
+                </nav>
+
+                <div class="contact-container">
+                    <ul class="contactInfos">
+                        <li><a href="https://github.com/IvyWF">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/wenfei-henry-xu/">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
 
-        <div class="wrapper"> <!-- container -->
+
+        <div class="wrapper">
             <div class="hero">
                 <div class="main">
-                    <div class="ul ulOne">
-                        <a href="#" class="li hoverable one">
+                    <div class="ul ulOne" id="removeSmallParent">
+                        <a href="konnichiwa.html" class="li hoverable">
+                            <span class="letterPink">K</span>onnichiwa
+                        </a>
+
+                        <div id="removeSmallOne">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4" />
+                            </svg>
+                        </div>
+
+                        <a href="ohayo.html" class="li hoverable one">
                             <span class="letterPink">O</span>hayô
                         </a>
-                        <svg height="100" width="50">
-                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f5f7fa ;stroke-width:4" />
-                        </svg>
 
-                        <a href="#" class="li hoverable">
+                        <div id="removeSmallTwo">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4" />
+                            </svg>
+                        </div>
+
+                        <a href="konbanwa.html" class="li hoverable">
                             <span class="letterPink">K</span>onbanwa
-                        </a>
-
-                        <svg height="100" width="50">
-                            <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4" />
-                        </svg>
-
-                        <a href="#" class="li hoverable">
-                            <span class="letterPink">K</span>onnichiwa
                         </a>
                     </div>
                 </div>
@@ -155,89 +161,75 @@
                         <span class="m_scroll_arrows trei"></span>
                     </div>
                 </div>
-
-                <!-- <div class="explore">
-                    <p class="explore__title">Explore</p>
-                    <div class="line">
-                        <svg height="50" width="500">
-                            <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(255,255,255);stroke-width:2" />
-                        </svg>
-                    </div>
-                    <a href="#slider-inner1" class="hoverable">
-                        <i class="fa-solid fa-plus plusIcon"></i>
-                    </a>
-                </div> -->
             </div>
 
             <div class="gallery-wrapper" id="sliderOne">
                 <div class="gallery galleryPopupOne" id="slider-inner1">
                     <div class="item">
-                        <h2 id="one">Morning///001</h2>
-                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                        <h2 id="one" class="konbSliderOne-title">Evening///001</h2>
+                        <img src="images/konbanwa/slider1/1.png" alt="Morning///001">
                     </div>
                     <div class="item">
-                        <h2 id="two">Morning///002</h2>
-                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                        <h2 id="two" class="konbSliderOne-title">Evening///002</h2>
+                        <img src="images/konbanwa/slider1/2.png" alt="Morning///002">
                     </div>
                     <div class="item">
-                        <h2 id="three">Morning///003</h2>
-                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                        <h2 id="three" class="konbSliderOne-title">Evening///003</h2>
+                        <img src="images/konbanwa/slider1/3.png" alt="Morning///003">
                     </div>
                     <div class="item">
-                        <h2 id="four">Morning///004</h2>
-                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                        <h2 id="four" class="konbSliderOne-title">Evening///004</h2>
+                        <img src="images/konbanwa/slider1/4.png" alt="Morning///004">
                     </div>
                     <div class="item">
-                        <h2 id="five">Morning///005</h2>
-                        <img src="images/osaka/5.jpg" alt="Morning///005">
+                        <h2 id="five" class="konbSliderOne-title">Evening///005</h2>
+                        <img src="images/konbanwa/slider1/5.png" alt="Morning///005">
                     </div>
                     <div class="item">
-                        <h2 id="six">Morning///006</h2>
-                        <img src="images/osaka/6.jpg" alt="Morning///006">
+                        <h2 id="six" class="konbSliderOne-title">Evening///006</h2>
+                        <img src="images/konbanwa/slider1/6.jpg" alt="Morning///006">
                     </div>
                 </div>
             </div>
 
-            <div class="separation ">
+            <div class="separation">
                 <div class="text rightToLeft">
                     <div class="text__item">
-                        <!-- <span>東京</span> 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>&nbsp
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
 
                     </div>
                     <div class="text__item">
-                        <!-- 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>&nbsp
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
                     </div>
                 </div>
             </div>
@@ -245,67 +237,70 @@
             <div class="gallery-wrapper-Two" id="sliderTwo">
                 <div class="galleryTwo galleryPopupTwo" id="slider-inner2">
                     <div class="item item3">
-                        <h2>Morning///001</h2>
-                        <img src="images/osaka/1.jpg" alt="Morning///001">
+                        <h2 class="konbSliderTwo-title">Evening///001</h2>
+                        <img src="images/konbanwa/slider2/1.png" alt="Evening///001">
                     </div>
 
                     <div class="item item3">
-                        <h2>Morning///002</h2>
-                        <img src="images/osaka/2.jpg" alt="Morning///002">
+                        <h2 class="konbSliderTwo-title">Evening///002</h2>
+                        <img src="images/konbanwa/slider2/2.png" alt="Evening///002">
                     </div>
 
                     <div class="item item3">
-                        <h2>Morning///003</h2>
-                        <img src="images/osaka/3.jpg" alt="Morning///003">
+                        <h2 class="konbSliderTwo-title">Evening///003</h2>
+                        <img src="images/konbanwa/slider2/3.png" alt="Evening///003">
                     </div>
 
                     <div class="item item3">
-                        <h2>Morning///004</h2>
-                        <img src="images/osaka/4.jpg" alt="Morning///004">
+                        <h2 class="konbSliderTwo-title">Evening///004</h2>
+                        <img src="images/konbanwa/slider2/4.png" alt="Evening///004">
                     </div>
                 </div>
+            </div>
+
+            <div class="modalTwo">
+                <img src="" alt="" class="full-img-two">
+                <p class="captionTwo">Evening///001</p>
             </div>
 
             <div class="separation separationTwo">
                 <div class="text rightToLeft">
                     <div class="text__item">
-                        <!-- <span>東京</span> 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>&nbsp
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
 
                     </div>
                     <div class="text__item">
-                        <!-- 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良 佐野 富士見 東京 大阪 京都 奈良&nbsp -->
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>
-                        <span>佐野</span>
-                        <span>富士見</span>
-                        <span>東京</span>
-                        <span>大阪</span>
-                        <span>京都</span>
-                        <span>奈良</span>&nbsp
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
                     </div>
                 </div>
             </div>
@@ -314,31 +309,35 @@
 
                 <div class="galleryThree" id="slider-inner3">
                     <div class="item">
-                        <h2 data-original="images/osaka/1.jpg">Tokyo///001
-                            <img src="images/osaka/1.jpg" alt="">
+                        <h2 data-original="images/konbanwa/slider3/1.png">Evening///001
                         </h2>
-
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                     <div class="item">
-                        <h2 data-original="images/osaka/2.jpg">Tokyo///002</h2>
+                        <h2 data-original="images/konbanwa/slider3/2.png">Evening///002</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                     <div class="item">
-                        <h2 data-original="images/osaka/3.jpg">Tokyo///003</h2>
+                        <h2 data-original="images/konbanwa/slider3/3.png">Evening///003</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                     <div class="item">
-                        <h2 data-original="images/osaka/4.jpg">Tokyo///004</h2>
+                        <h2 data-original="images/konbanwa/slider3/4.png">Evening///004</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                     <div class="item">
-                        <h2 data-original="images/osaka/5.jpg">Tokyo///005</h2>
+                        <h2 data-original="images/konbanwa/slider3/5.png">Evening///005</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                     <div class="item">
-                        <h2 data-original="images/osaka/6.jpg">Tokyo///006</h2>
+                        <h2 data-original="images/konbanwa/slider3/6.png">Evening///006</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
                     </div>
                 </div>
                 <canvas class="canvas2"></canvas>
                 <div class="modal">
-                    <img src="images/osaka/1.jpg" alt="" class="full-img">
-                    <p class="caption">Tokyo///001</p>
+                    <img src="" alt="" class="full-img">
+                    <p class="caption">Evening///001</p>
                 </div>
             </div>
 
@@ -356,9 +355,15 @@
 
             <div class="info">
                 <!-- <h3>Contact me</h3> -->
-                <p>Email: hdueizhfur@gmail.com</p>
-                <p>Github</p>
-                <p>Tel: 6781647386</p>
+                <a href="https://github.com/IvyWF" class="hoverable">
+                    <p>Github</p>
+                </a>
+            </div>
+            <div class="info">
+                <!-- <h3>Contact me</h3> -->
+                <a href="https://www.linkedin.com/in/wenfei-henry-xu/" class="hoverable">
+                    <p>LinkedIn</p>
+                </a>
             </div>
 
         </footer>
@@ -367,11 +372,13 @@
 
 
     <!-- <script src="scripts/preload.js"></script> -->
-    <script src="scripts/cursor.js"></script>
-    <script src="scripts/descriptionAnim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="scripts/cursor3.js"></script>
+    <script src="scripts/fullscreenMenu3.js"></script>
+    <script src="scripts/descriptionAnim3.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-    <script src="scripts/sliders.js"></script>
-    <script src="scripts/gallery.js"></script>
+    <script src="scripts/sliders3.js"></script>
+    <script src="scripts/gallery3.js"></script>
 </body>
 
 </html>

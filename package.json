@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "dev": "parcel ohayo.html",
+    "build": "parcel build ohayo.html",
+    "deploy": "rm -rf dist/ && npm build && gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +15,7 @@
     "@ashthornton/asscroll": "^2.0.11",
     "@studio-freight/lenis": "^1.0.27",
     "figures": "^6.0.1",
+    "gh-pages": "^6.1.1",
     "gsap": "^3.12.2",
     "parcel": "^2.9.3",
     "three": "^0.156.1"

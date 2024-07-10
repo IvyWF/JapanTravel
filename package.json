@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css",
-    "dev": "parcel ohayo.html",
-    "build": "parcel build ohayo.html",
-    "deploy": "rm -rf dist/ && npm build && gh-pages -d dist"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
   },
   "author": "",
   "license": "ISC",

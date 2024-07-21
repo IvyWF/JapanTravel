@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "build": "parcel build ohayo.html --public-url ./"
   },
   "author": "",
   "license": "ISC",

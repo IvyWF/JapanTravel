@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./css/style.css",
-    "build": "parcel ohayo.html --public-url ./"
+    "start": "parcel ohayo.html",
+    "build": "parcel ohayo.html konnichiwa.html konbanwa.html --public-url ./"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "@ashthornton/asscroll": "^2.0.11",
     "@studio-freight/lenis": "^1.0.27",
     "figures": "^6.0.1",
+    "gh-pages": "^6.1.1",
     "gsap": "^3.12.2",
     "parcel": "^2.9.3",
     "three": "^0.156.1"

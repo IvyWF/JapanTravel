@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.78032849.css">
+    <script src="https://kit.fontawesome.com/69285b19fa.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <title>JapanTravel</title>
+<script src="/style.78032849.js"></script><script src="/konnichiwa.js"></script></head>
+
+<body id="ohayo-body">
+
+    <div class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+
+        <div class="loader-wrap-heading">
+            <span class="loader-span">
+                <h1>Loading</h1>
+            </span>
+        </div>
+    </div>
+
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="60" width="60">
+                <circle cx="30" cy="30" r="27" stroke-width="2"></circle>
+            </svg>
+        </div>
+
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="2" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <header id="header"> <!--header-container-->
+            <div id="header-container">
+                <h1 id="headerTitle">
+                    <span class="letter">t </span>
+                    <span class="letter letterPink">o </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter letterPink">k </span>
+                    <span class="letter">y </span>
+                    <span class="letter">o</span>
+                </h1>
+
+
+                <div id="headerNav">
+                    <div class="headerNav__item">
+                        <a href="/konnichiwa.html" class="hoverable">
+                            <span class="navText">Konnichiwa</span>
+                        </a>
+                    </div>
+                    <div class="headerNav__item">
+                        <a href="/ohayo.html" class="hoverable">
+                            <span class="navText">Ohayô</span>
+                        </a>
+                    </div>
+                    <div class="headerNav__item">
+                        <a href="/konbanwa.html" class="hoverable">
+                            <span class="navText">Konbanwa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="dateTime">
+                    <div id="date"></div>
+                    <div id="time"></div>
+                </div>
+
+                <div id="japanese">
+                    東京タワーが夜空に光を放つ。<br>
+                    銀座の街は買い物天国です。<br>
+                    浅草寺で伝統文化を感じる。<br>
+                    新宿の夜は眠らない街だ。🇯🇵
+                </div>
+
+                <button class="toggle-btn" id="nav-toggle-btn">
+                    <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+                        <path d="M10,2 L2,2" class="bar-1"></path>
+                        <path d="M2,5 L10,5" class="bar-2"></path>
+                        <path d="M10,8 L2,8" class="bar-3"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </header>
+
+        <div id="navContainer"> <!-- container -->
+            <div class="container-inner">
+                <div class="nav-bg">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav>
+                    <ul class="nav-container">
+                        <li><a href="/konnichiwa.html">Konnichiwa</a></li>
+                        <li><a href="/ohayo.html">Ohayô</a></li>
+                        <li><a href="/konbanwa.html">Konbanwa</a></li>
+                    </ul>
+                </nav>
+
+                <div class="contact-container">
+                    <ul class="contactInfos">
+                        <li><a href="https://github.com/IvyWF">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/wenfei-henry-xu/">LinkedIn</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <div class="hero">
+                <div class="main">
+                    <div class="ul ulOne" id="removeSmallParent">
+                        <a href="/konnichiwa.html" class="li hoverable">
+                            <span class="letterPink">K</span>onnichiwa
+                        </a>
+
+                        <div id="removeSmallOne">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4"></line>
+                            </svg>
+                        </div>
+
+                        <a href="/ohayo.html" class="li hoverable one">
+                            <span class="letterPink">O</span>hayô
+                        </a>
+
+                        <div id="removeSmallTwo">
+                            <svg height="100" width="50">
+                                <line x1="30" y1="0" x2="0" y2="90" style="stroke:#f7e7cf ;stroke-width:4"></line>
+                            </svg>
+                        </div>
+
+                        <a href="/konbanwa.html" class="li hoverable">
+                            <span class="letterPink">K</span>onbanwa
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="mouse_scroll">
+
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div>
+                        <span class="m_scroll_arrows unu"></span>
+                        <span class="m_scroll_arrows doi"></span>
+                        <span class="m_scroll_arrows trei"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper" id="sliderOne">
+                <div class="gallery galleryPopupOne" id="slider-inner1">
+                    <div class="item">
+                        <h2 id="one" class="ohayoSliderOne-title">Afternoon///001</h2>
+                        <img src="/1.e4277b19.png" alt="Morning///001">
+                    </div>
+                    <div class="item">
+                        <h2 id="two" class="ohayoSliderOne-title">Afternoon///002</h2>
+                        <img src="/2.9a5194c5.png" alt="Morning///002">
+                    </div>
+                    <div class="item">
+                        <h2 id="three" class="ohayoSliderOne-title">Afternoon///003</h2>
+                        <img src="/3.43a4bf7e.png" alt="Morning///003">
+                    </div>
+                    <div class="item">
+                        <h2 id="four" class="ohayoSliderOne-title">Afternoon///004</h2>
+                        <img src="/4.086f80ff.png" alt="Morning///004">
+                    </div>
+                    <div class="item">
+                        <h2 id="five" class="ohayoSliderOne-title">Afternoon///005</h2>
+                        <img src="/5.9d470bdb.png" alt="Morning///005">
+                    </div>
+                    <div class="item">
+                        <h2 id="six" class="ohayoSliderOne-title">Afternoon///006</h2>
+                        <img src="/6.d24fe83d.png" alt="Morning///006">
+                    </div>
+                </div>
+            </div>
+
+            <div class="separation ">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper-Two" id="sliderTwo">
+                <div class="galleryTwo galleryPopupTwo" id="slider-inner2">
+                    <div class="item item3">
+                        <h2 class="ohayoSliderTwo-title">Afternoon///001</h2>
+                        <img src="/1.0c0e379b.png" alt="Afternoon///001">
+                    </div>
+
+                    <div class="item item3">
+                        <h2 class="ohayoSliderTwo-title">Afternoon///002</h2>
+                        <img src="/2.3e11af8c.png" alt="Afternoon///002">
+                    </div>
+
+                    <div class="item item3">
+                        <h2 class="ohayoSliderTwo-title">Afternoon///003</h2>
+                        <img src="/3.d5bfcf8e.png" alt="Afternoon///003">
+                    </div>
+
+                    <div class="item item3">
+                        <h2 class="ohayoSliderTwo-title">Afternoon///004</h2>
+                        <img src="/4.829812a8.png" alt="Afternoon///004">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modalTwo">
+                <img src="" alt="" class="full-img-two">
+                <p class="captionTwo">Afternoon///001</p>
+            </div>
+
+            <div class="separation separationTwo">
+                <div class="text rightToLeft">
+                    <div class="text__item">
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
+
+                    </div>
+                    <div class="text__item">
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>
+                        <span>さが</span>
+                        <span>とやま</span>
+                        <span>とうきょう</span>
+                        <span>おおさか</span>
+                        <span>きょうと</span>
+                        <span>なら</span>&nbsp
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-wrapper-Three" id="sliderThree">
+
+                <div class="galleryThree" id="slider-inner3">
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/1.png">001
+                        </h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/2.png">002</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/3.png">003</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/4.png">004</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/5.png">005</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                    <div class="item">
+                        <h2 data-original="images/ohayo/slider3/6.png">006</h2>
+                        <p>Click to view <i class="fa-regular fa-circle-up"></i></p>
+                    </div>
+                </div>
+                <canvas class="canvas2"></canvas>
+                <div class="modal">
+                    <img src="" alt="" class="full-img">
+                    <p class="caption">Afternoon///001</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer>
+
+            <!-- <div class="social-media">
+                <i class="fa-brands fa-instagram icon-3d"></i>
+                <i class="fa-brands fa-facebook-f icon-3d"></i>
+                <i class="fa-brands fa-pinterest-p icon-3d"></i>
+            </div> -->
+
+            <div class="info">
+                <!-- <h3>Contact me</h3> -->
+                <a href="https://github.com/IvyWF" class="hoverable">
+                    <p>Github</p>
+                </a>
+            </div>
+            <div class="info">
+                <!-- <h3>Contact me</h3> -->
+                <a href="https://www.linkedin.com/in/wenfei-henry-xu/" class="hoverable">
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- <script src="scripts/preload.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="/cursor.ed5dce8c.js"></script>
+    <script src="/fullscreenMenu.bc1620b6.js"></script>
+    <script src="/descriptionAnim.82c760c6.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="/sliders1.dd56c2d5.js"></script>
+    <script src="/gallery1.9f07451a.js"></script>
+</body>
+
+</html>

@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./css/style.css",
-    "start": "parcel ohayo.html",
-    "build": "parcel ohayo.html konnichiwa.html konbanwa.html --public-url ./"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
   },
+  "homepage": "https://ivywf.github.io/JapanTravel/",
   "author": "",
   "license": "ISC",
   "dependencies": {

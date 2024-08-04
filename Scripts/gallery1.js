@@ -149,10 +149,10 @@ let captionTwo = document.querySelector('.captionTwo');
 
 
 
-import image1 from '../images/ohayo/slider2/1.png';
-import image2 from '../images/ohayo/slider2/2.png';
-import image3 from '../images/ohayo/slider2/3.png';
-import image4 from '../images/ohayo/slider2/4.png';
+import image1 from '../Images/ohayo/slider2/1.png';
+import image2 from '../Images/ohayo/slider2/2.png';
+import image3 from '../Images/ohayo/slider2/3.png';
+import image4 from '../Images/ohayo/slider2/4.png';
 
 
 // Load images into an array for reference
@@ -190,12 +190,12 @@ imgOpenedTwo.addEventListener('click', (e) => {
     }
 });
 
-import image3_1 from '../images/ohayo/slider3/1.png';
-import image3_2 from '../images/ohayo/slider3/2.png';
-import image3_3 from '../images/ohayo/slider3/3.png';
-import image3_4 from '../images/ohayo/slider3/4.png';
-import image3_5 from '../images/ohayo/slider3/5.png';
-import image3_6 from '../images/ohayo/slider3/6.png';
+import image3_1 from '../Images/ohayo/slider3/1.png';
+import image3_2 from '../Images/ohayo/slider3/2.png';
+import image3_3 from '../Images/ohayo/slider3/3.png';
+import image3_4 from '../Images/ohayo/slider3/4.png';
+import image3_5 from '../Images/ohayo/slider3/5.png';
+import image3_6 from '../Images/ohayo/slider3/6.png';
 
 // Popup modal for 3rd slider
 let modal = document.querySelector('.modal');

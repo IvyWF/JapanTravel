@@ -255,12 +255,12 @@ requestAnimationFrame(raf);
 
 
 
-import image1 from '../images/konnichiwa/slider3/1.png';
-import image2 from '../images/konnichiwa/slider3/2.png';
-import image3 from '../images/konnichiwa/slider3/3.png';
-import image4 from '../images/konnichiwa/slider3/4.png';
-import image5 from '../images/konnichiwa/slider3/5.png';
-import image6 from '../images/konnichiwa/slider3/6.png';
+import image1 from '../Images/konnichiwa/slider3/1.png';
+import image2 from '../Images/konnichiwa/slider3/2.png';
+import image3 from '../Images/konnichiwa/slider3/3.png';
+import image4 from '../Images/konnichiwa/slider3/4.png';
+import image5 from '../Images/konnichiwa/slider3/5.png';
+import image6 from '../Images/konnichiwa/slider3/6.png';
 
 const matchPc = window.matchMedia("(min-width: 993px)");
 
